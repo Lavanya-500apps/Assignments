@@ -30,7 +30,7 @@ import task1 from '@/components/05-05-2022/task1.vue'
 import task2 from '@/components/05-05-2022/task2.vue'
 import directives from '@/components/05-05-2022/directives.vue'
 import tab from '@/components/06-05-2022/tab.vue'
-import task from '@/components/06-05-2022/task.vue'
+import tabtask from '@/components/06-05-2022/tabtask.vue'
 import async from '@/components/06-05-2022/async.vue'
 Vue.use(Router)
 
@@ -64,7 +64,7 @@ const routes = [
     {path:'/task1',name:"task1",component:task1},
     {path:'/task2',name:"task2",component:task2},
     {path:'/tab',name:"tab",component:tab},
-    {path:'/task',name:"task",component:task},
+    {path:'/tabtask',name:"task",component:tabtask},
     {path:'/async',name:"async",component:async},
 
 ]
