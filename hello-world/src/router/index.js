@@ -5,7 +5,9 @@ import Router from 'vue-router'
 import promise from '@/components/28-04-2022/promise.vue'
 import Axios from '@/components/28-04-2022/axios.vue'
 import t3que1 from '@/components/28-04-2022/t3que1.vue'
-import Fetch from '@/components/29-04-2022/fetch.vue'
+import fetch from '@/components/29-04-2022/fetch.vue'
+import fetch1 from '@/components/29-04-2022/fetch1.vue'
+import fetch2 from '@/components/29-04-2022/fetch2.vue'
 import t3q1 from '@/components/29-04-2022/t3q1.vue'
 import t3q2 from '@/components/29-04-2022/t3q2.vue'
 import settimeout from '@/components/29-04-2022/settimeout.vue'
@@ -27,6 +29,9 @@ import A10 from '@/components/04-05-2022/A10.vue'
 import task1 from '@/components/05-05-2022/task1.vue'
 import task2 from '@/components/05-05-2022/task2.vue'
 import directives from '@/components/05-05-2022/directives.vue'
+import tab from '@/components/06-05-2022/tab.vue'
+import task from '@/components/06-05-2022/task.vue'
+import async from '@/components/06-05-2022/async.vue'
 Vue.use(Router)
 
 const routes = [
@@ -36,7 +41,9 @@ const routes = [
     {path:'/t3q1',name:"t3q1",component:t3q1},
     {path:'/t3q2',name:"t3q2",component:t3q2},
     {path:'/t3que1',name:"t3que1",component:t3que1},
-    {path:'/fetch',name:"lava",component:Fetch},
+    {path:'/fetch',name:"lava",component:fetch},
+    {path:'/fetch1',name:"fetch1",component:fetch1},
+    {path:'/fetch2',name:"fetch2",component:fetch2},
     {path:'/settimeout',name:"settimeout",component:settimeout},
     {path:'/country',name:"country",component:country},
     {path:'/dropdown',name:"country",component:dropdown},
@@ -56,6 +63,9 @@ const routes = [
     {path:'/directives',name:"directives",component:directives},
     {path:'/task1',name:"task1",component:task1},
     {path:'/task2',name:"task2",component:task2},
+    {path:'/tab',name:"tab",component:tab},
+    {path:'/task',name:"task",component:task},
+    {path:'/async',name:"async",component:async},
 
 ]
 

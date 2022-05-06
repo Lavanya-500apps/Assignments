@@ -18,14 +18,14 @@ export default {
   data() {
     return {
       res:" ",
-      fields: ["id", "title"],
+      fields: [],
       //fields: ["userId", "id", "title", "completed"],
     };
   },
 
   methods: {
     fun() {
-      let response = fetch("https://jsonplaceholder.typicode.com/todos/");
+      let response = fetch('https://jsonplaceholder.typicode.com/todos/1');
 
       let mypromise = new Promise((myResolve, myReject) => {
         myResolve(response);

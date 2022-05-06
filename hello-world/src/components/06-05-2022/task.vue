@@ -1,46 +1,58 @@
 <template>
   <div>
-    <button @click="func()">splice</button>
+    <b-card no-body>
+      <b-tabs card>
+       
+        <b-tab v-for="i in tabs" :key="'dyn-tab-' + i" :title="'Tab ' + i">
+          <b-form-input v-model="value" placeholder="Enter your Firstname"></b-form-input><br>
+          <b-form-input v-model="value" placeholder="Enter your Lastname"></b-form-input>
+          <b-button
+            size="sm"
+            variant="danger"
+            class="float-right"
+            @click="closeTab(i)">
+            Close tab
+          </b-button>
+        </b-tab>
 
-    <button @click="func2()">slice</button>
+        
+        <template #tabs-end>
+          <b-nav-item role="presentation" @click.prevent="newTab" href="#"
+            ><b>+</b></b-nav-item
+          >
+        </template>
 
-    <p>{{ months }}</p>
-
-    <p>{{ result }}</p>
+    
+        <template #empty>
+          <div class="text-center text-muted">
+            There are no open tabs<br />
+            Open a new tab using the <b>+</b> button above.
+          </div>
+        </template>
+      </b-tabs>
+    </b-card>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TasK",
-
+    name:"TAb",
   data() {
     return {
-      result: [],
-
-      months: ["Jan", "March", "April", "June"],
-
-      //replace:[ ]
-
-      num: [2, 5, 6, 3, 1, 8, 6, 9],
+      tabs: [],
+      tabCounter: 0,
     };
   },
-
   methods: {
-    func() {
-      this.months.splice(2, 0, "March");
-
-      // console.log(this.months)
-
-      this.replace = this.months.splice(1, 1, "February");
-
-      // console.log(this.replace)
+    closeTab(x) {
+      for (let i = 0; i < this.tabs.length; i++) {
+        if (this.tabs[i] === x) {
+          this.tabs.splice(i, 1);
+        }
+      }
     },
-
-    func2() {
-      this.result = this.num.slice(2, 7);
-
-      return this.result;
+    newTab() {
+      this.tabs.push(this.tabCounter++);
     },
   },
 };

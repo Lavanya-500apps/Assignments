@@ -1,0 +1,25 @@
+<template>
+    <div>
+
+        <h1>Using Fetch</h1>
+        <button @click=fun()>click me</button>
+        </div>
+</template>
+<script>
+export default {
+    name:"FeTch1",   
+        data(){
+            return{
+                
+            }
+        },
+    methods:{
+fun()
+{  
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(data => document.write(JSON.stringify(data)))
+}
+}
+}
+</script>
