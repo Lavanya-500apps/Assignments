@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h2>calculations</h2>
+</head>
+
+<body>
+
+    <form>
+        1st number : <input type="text" placeholder="enter a number" id="1num" required> <br> <br>
+        2nd number : <input type="text" placeholder="enter a number" id="2num" required> <br> <br>
+        <button type="button" onclick="fun1()">multiply</button>
+        <button type="button" onclick="fun2()">division</button>
+    </form>
+    <p id="demo"></p>
+    <script>
+
+        function fun1() {
+            var a = document.getElementById("1num").value;
+            var b = document.getElementById("2num").value;
+            document.getElementById("demo").innerHTML = "The Result is : " + "<br>" + a * b;
+        }
+        function fun2() {
+            var a = document.getElementById("1num").value;
+            var b = document.getElementById("2num").value;
+            document.getElementById("demo").innerHTML = "The Result is : " + "<br>" + a / b;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

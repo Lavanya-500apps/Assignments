@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>formpage</title>
+</head>
+<body>
+    <form name="myform"  onsubmit="form()">
+
+        First Name: <input type="text" name="FirstName" placeholder="Enter FirstName" required><br /> <br>
+
+        Last Name: <input type="text" name="LastName" placeholder="Enter LastName" required><br />
+
+        <input type="submit" value="click">
+    </form>
+</body>
+<script>
+    function form() {
+        document.write("FullName: " + "</br>" + document.myform.FirstName.value + " " + document.myform.LastName.value);
+    }
+</script>
+
+</html>

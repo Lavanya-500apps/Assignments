@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Display the data in the table</h2>
+
+    <table style="width:100%">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</th>
+            <td>Agile CRM</td>
+            <td>A company of excellence</td>
+        </tr>
+        <tr>
+            <td>1</th>
+            <td>mantra technologies</td>
+            <td>500apps</td>
+        </tr>
+        <tr>
+            <td>2</th>
+            <td>500apps Python</td>
+            <td>Backend built using python</td>
+        </tr>
+        <tr>
+            <td>3</th>
+            <td>500apps infinity</td>
+            <td>Builtusing vue JS</td>
+        </tr>
+    </table>
+
+    <h2>display the name and index values from the table</h2>
+
+    <p id="demo"></p>
+
+
+    <script>
+
+        var a = [{ "name": " Agile CRM", "description": " A company of excellence" },
+        { "name": "mantra technologies", "description": "500apps" },
+        { "name": "500apps Python", "description": "Backend built using python" },
+        { "name": "500apps infinity", "description": "Builtusing vue JS" }];
+
+
+        data();
+
+        function data() {
+            document.getElementById("demo").innerHTML =
+                a[0].name + "  - 0" + "<br>" +
+                a[1].name + "  - 1" + "<br>" +
+                a[2].name + "   - 2" + "<br>" +
+                a[3].name + "   - 3";
+        }
+
+    </script>
+
+
+</body>
+
+</html>
