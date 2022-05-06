@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JSON String to object</h2>
+<p>string={"name":"lavanya", "age":24, "city":"hitechcity"}</p>
+<p>object:</p>
+<p id="demo"></p>
+
+<script>
+const string = JSON.parse('{"name":"lavanya", "age":24, "city":"hitechcity"}')
+ 
+document.getElementById("demo").innerHTML = string.name + " , " + string.age + " , " + string.city;
+</script>
+
+</body>
+</html>

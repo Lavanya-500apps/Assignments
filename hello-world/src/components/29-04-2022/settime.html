@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The setTimeout() and clearTimeout() Methods</h2>
+
+<p>Click "Skip" to skip advertisement.(You have 5 seconds)</p>
+
+<button onclick="Stop()">Skip!</button>
+
+<h2 id="demo"></h2>
+
+<script>
+const myTimeout = setTimeout(advertisement, 5000);
+
+function advertisement() {
+  document.getElementById("demo").innerHTML = "advertisement..."
+}
+
+function Stop() {
+  clearTimeout(myTimeout);
+}
+</script>
+
+</body>
+</html>
