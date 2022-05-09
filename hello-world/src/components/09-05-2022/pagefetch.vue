@@ -8,10 +8,10 @@
     ></b-pagination>
      <b-tabs>
       <b-tab title="Tab 1" @click="func1()" active>
-<b-table :items="res" :fields="fields" :per-page="perPage" :current-page="currentPage"></b-table>
+<b-table :items="res" :fields="fields" :per-page="perPage1" :current-page="currentPage"></b-table>
       </b-tab>
       <b-tab title="Tab 2" @click="func2()" active>
-<b-table :items="result" :fields="fields" :per-page="perPage" :current-page="currentPage"></b-table>
+<b-table :items="result" :fields="fields" :per-page="perPage2" :current-page="currentPage"></b-table>
       </b-tab>
      </b-tabs>
       
@@ -23,7 +23,8 @@ export default {
 name:"FEtch",
 data(){
     return{
-perPage:3,
+perPage1:3,
+perPage2:5,
 currentPage:1,
 res:" ",
 result:" ",
@@ -42,8 +43,8 @@ async func2(){
 },
 computed:{
     rows(){
-       return this.res.length; 
-      // return this.result.length;
+       //return this.res.length; 
+       return this.result.length;
        
     }
 }
