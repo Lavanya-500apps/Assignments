@@ -32,6 +32,10 @@ import directives from '@/components/05-05-2022/directives.vue'
 import tab from '@/components/06-05-2022/tab.vue'
 import tabtask from '@/components/06-05-2022/tabtask.vue'
 import async from '@/components/06-05-2022/async.vue'
+import tabtable from '@/components/09-05-2022/tabtable.vue'
+import pageaxios from '@/components/09-05-2022/pageaxios.vue'
+import pagefetch from '@/components/09-05-2022/pagefetch.vue'
+import created from '@/components/09-05-2022/created.vue'
 Vue.use(Router)
 
 const routes = [
@@ -66,7 +70,10 @@ const routes = [
     {path:'/tab',name:"tab",component:tab},
     {path:'/tabtask',name:"task",component:tabtask},
     {path:'/async',name:"async",component:async},
-
+    {path:'/tabtable',name:"tabtable",component:tabtable},
+    {path:'/pageaxios',name:"pageaxios",component:pageaxios},
+    {path:'/pagefetch',name:"pagefetch",component:pagefetch},
+    {path:'/created',name:"created",component:created},
 ]
 
 
