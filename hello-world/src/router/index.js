@@ -35,7 +35,10 @@ import async from '@/components/06-05-2022/async.vue'
 import tabtable from '@/components/09-05-2022/tabtable.vue'
 import pageaxios from '@/components/09-05-2022/pageaxios.vue'
 import pagefetch from '@/components/09-05-2022/pagefetch.vue'
-import created from '@/components/09-05-2022/created.vue'
+import lifecycle from '@/components/09-05-2022/lifecycle.vue'
+import example from '@/components/09-05-2022/example.vue'
+import nexttick from '@/components/10-05-2022/nexttick.vue'
+import next from '@/components/10-05-2022/next.vue'
 Vue.use(Router)
 
 const routes = [
@@ -73,7 +76,10 @@ const routes = [
     {path:'/tabtable',name:"tabtable",component:tabtable},
     {path:'/pageaxios',name:"pageaxios",component:pageaxios},
     {path:'/pagefetch',name:"pagefetch",component:pagefetch},
-    {path:'/created',name:"created",component:created},
+    {path:'/lifecycle',name:"lifecycle",component:lifecycle},
+    {path:'/example',name:"example",component:example},
+    {path:'/nexttick',name:"nexttick",component:nexttick},
+    {path:'/next',name:"next",component:next},
 ]
 
 
