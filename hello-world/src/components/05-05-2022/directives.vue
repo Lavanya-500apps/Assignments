@@ -15,6 +15,7 @@
         <div :class="[isVisible ? 'bg-info' : 'bg-light', 'border', 'p-2', 'text-center']"
           id="list"
           style="position: relative; overflow-y: auto; height: 300px">
+          
         
         
           <h4 id="list-item-1">Item 1</h4>
