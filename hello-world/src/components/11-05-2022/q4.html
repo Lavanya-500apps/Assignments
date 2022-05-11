@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>comparing strings</h2>
+        <p>a=file</p>
+        <p>b=life</p>
+        <script>
+            let a="file";
+            let b="life";
+            let res=a.length===b.length && a.split("").sort().join() == b.split("").sort().join();
+            document.write("comparing letters : "+" "+res+"<br>");
+
+            let result=a.includes(b) 
+            document.write("comparing string : "+" "+result);
+
+        </script>
+    </body>
+</html>
