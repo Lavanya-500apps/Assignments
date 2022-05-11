@@ -7,10 +7,9 @@
         <script>
             let a="File";
             let b="Life";
-            let c=a.toLowerCase();
-            let d=b.toLowerCase();
             
-            let res=c.length===d.length && c.split("").sort().join() == d.split("").sort().join();
+            
+            let res=a.length===b.length && a.split(a).sort().join() == b.split(b).sort().join();
             document.write("comparing letters : "+" "+res+"<br>");
 
             let result=a.includes(b) 
