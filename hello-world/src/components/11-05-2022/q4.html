@@ -2,12 +2,15 @@
 <html>
     <body>
         <h2>comparing strings</h2>
-        <p>a=file</p>
-        <p>b=life</p>
+        <p>a=File</p>
+        <p>b=Life</p>
         <script>
-            let a="file";
-            let b="life";
-            let res=a.length===b.length && a.split("").sort().join() == b.split("").sort().join();
+            let a="File";
+            let b="Life";
+            let c=a.toLowerCase();
+            let d=b.toLowerCase();
+            
+            let res=c.length===d.length && c.split("").sort().join() == d.split("").sort().join();
             document.write("comparing letters : "+" "+res+"<br>");
 
             let result=a.includes(b) 
