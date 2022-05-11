@@ -39,6 +39,7 @@ import lifecycle from '@/components/09-05-2022/lifecycle.vue'
 import example from '@/components/09-05-2022/example.vue'
 import nexttick from '@/components/10-05-2022/nexttick.vue'
 import next from '@/components/10-05-2022/next.vue'
+import test1 from '@/components/10-05-2022/test1.vue'
 import test5 from '@/components/10-05-2022/test5.vue'
 import test6 from '@/components/10-05-2022/test6.vue'
 Vue.use(Router)
@@ -82,6 +83,7 @@ const routes = [
     {path:'/example',name:"example",component:example},
     {path:'/nexttick',name:"nexttick",component:nexttick},
     {path:'/next',name:"next",component:next},
+    {path:'/test1',name:"test1",component:test1},
     {path:'/test5',name:"test5",component:test5},
     {path:'/test6',name:"test6",component:test6},
 ]

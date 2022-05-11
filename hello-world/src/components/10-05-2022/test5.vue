@@ -1,24 +1,12 @@
 <template>
   <div>
     
-    productname:
-    <b-form-input
-      v-model="value"
-      type="text"
-      id="demo1"
-      placeholder="Enter productname"></b-form-input><br />
-    productprice:
-    <b-form-input
-      v-model="value"
-      type="number"
-      id="demo2"
-      placeholder="Enter price"></b-form-input><br />
-    productcategory:
-    <b-form-input
-      v-model="value"
-      type="text"
-      id="demo3"
-      placeholder="Enter productcategory"></b-form-input><br />
+    productname:<b-form-input v-model="value" type="text"
+      id="demo1" placeholder="Enter productname"></b-form-input><br />
+    productprice:<b-form-input v-model="value" type="number"
+      id="demo2" placeholder="Enter price"></b-form-input><br />
+    productcategory:<b-form-input v-model="value" type="text"
+      id="demo3" placeholder="Enter productcategory"></b-form-input><br />
     <button @click="fun()">submit</button>
     <b-table :items="products" :fields="fields"></b-table>
   </div>
