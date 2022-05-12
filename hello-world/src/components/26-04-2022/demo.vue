@@ -3,7 +3,7 @@
 <h1>heading tags</h1>
 <p>paragraphs</p>
 <p>{{value}}</p>
-<button type="button" @click="f1()">click</button>
+<button @click="f1()">click</button>
 
       </div>
 </template>
@@ -20,8 +20,9 @@ export default {
     methods:
     {
       f1() {
-          this.value=this.array.forEach((arr)=>
-          console.log(arr))
+          this.value=this.array.forEach((arr)=>{
+            
+          console.log(arr*2)})
 
       },
 
