@@ -3,7 +3,7 @@
     <h2>country list</h2>
 
   <b-form-select v-model="value" :options="country"></b-form-select>
-  <b-table striped hover  :items="res"></b-table>
+  <b-table striped hover  :items="res" :fields="fields"></b-table>
     <button @click="fun()">click</button>
   </div>
 </template>

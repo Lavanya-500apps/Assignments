@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     fun() {
-      let mypromise = new Promise(function (myResolve, myReject) {
+      let mypromise = new Promise((myResolve, myReject)=> {
         let a = "lavanya";
         let b = "lavanya";
         if (a == b) {
@@ -24,10 +24,10 @@ export default {
       });
 
       mypromise
-        .then(function () {
+        .then(()=>{
           console.log("success");
         })
-        .catch(function () {
+        .catch(()=>{
           console.log("error");
         });
     },

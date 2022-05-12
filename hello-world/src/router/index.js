@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import { component } from 'vue/types/umd'
 // import HelloWorld from '../components/HelloWorld'
+import demo from '@/components/26-04-2022/demo.vue'
 import promise from '@/components/28-04-2022/promise.vue'
 import Axios from '@/components/28-04-2022/axios.vue'
 import t3que1 from '@/components/28-04-2022/t3que1.vue'
@@ -42,10 +43,12 @@ import next from '@/components/10-05-2022/next.vue'
 import test1 from '@/components/10-05-2022/test1.vue'
 import test5 from '@/components/10-05-2022/test5.vue'
 import test6 from '@/components/10-05-2022/test6.vue'
+import q2 from '@/components/11-05-2022/q2.vue'
 Vue.use(Router)
 
 const routes = [
 
+    {path:'/demo',name:"demo",component:demo},
     {path:'/promise',name:"lava",component:promise},
     {path:'/axios',name:"lava",component:Axios},
     {path:'/t3q1',name:"t3q1",component:t3q1},
@@ -86,6 +89,7 @@ const routes = [
     {path:'/test1',name:"test1",component:test1},
     {path:'/test5',name:"test5",component:test5},
     {path:'/test6',name:"test6",component:test6},
+    {path:'/q2',name:"q2",component:q2},
 ]
 
 

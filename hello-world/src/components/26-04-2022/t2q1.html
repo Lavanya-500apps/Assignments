@@ -24,7 +24,7 @@
         
         Users();
         function sorting() {
-            users.sort(function (a, b) {
+            users.sort((a, b)=> {
                 let x = a.name.toLowerCase();
                 let y = b.name.toLowerCase();
                 if (x < y) { return -1; }
@@ -36,7 +36,7 @@
         }
 
         function reverse() {
-            users.reverse(function (a, b) {
+            users.reverse((a, b)=> {
                 let x = a.name.toLowerCase();
                 let y = b.name.toLowerCase();
                 if (x < y) { return -1; }
