@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name:DEmo,
+    name:"DEmo",
     data() {
         return{
             array: [1,2,3,4,5],
