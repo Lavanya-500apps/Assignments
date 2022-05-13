@@ -5,7 +5,7 @@
     <p>{{ value }}</p>
     <p>{{ data }}</p>
     <p>{{ values }}</p>
-    {{A}}
+    
     <p id="demo"></p>
     <button @click="f1()">filter</button>
     <button @click="f2()">find</button>
@@ -19,7 +19,7 @@ export default {
   name: "MEthods",
   data() {
     return {
-      table_data: [
+      table: [
         { name: "Agile CRM", description: " A company of excellence" },
 
         { name: "mantra technologies", description: "500apps" },
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     f1() {
-      this.array = this.table_data.filter((arr) => arr.name == "Agile CRM");
+      this.array = this.table.filter((arr) => arr.name == "Agile CRM");
       return this.array.name;
     },
 
@@ -49,8 +49,8 @@ export default {
     },
 
     f3() {
-      this.data = this.A.map((arr) => arr + 2);
-      //this.data = this.A.map((arr) => arr == 4);
+      //this.data = this.A.map((arr) => arr + 2);
+      this.data = this.table.map((arr) => arr.name == "Agile CRM");
       //displaying true or false
       return this.data.arr;
     },
