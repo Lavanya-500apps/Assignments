@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>REPLACE "lavanya" with "gavara lavanya"</h2>
+
+
+<p>"my name is lavanya"</p>
+<button onclick="replace()">change</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+replace=()=> {
+  let text = "'my name is lavanya'"
+  length=text.length;
+  document.getElementById("demo").innerHTML="length is : "+text.length
+  let result=text.replace("lavanya","gavara lavanya");
+  document.getElementById("demo1").innerHTML=result
+  
+}
+</script>
+
+</body>
+</html>

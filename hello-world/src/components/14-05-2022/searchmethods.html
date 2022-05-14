@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>String search Methods</h2>
+<p>I learn java script and java</p>
+
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+
+
+<script>
+let str = "I learn java script and java";
+document.getElementById("demo1").innerHTML = "index of java is : " +str.indexOf("java");
+document.getElementById("demo2").innerHTML = "lastindex of java is : " +str.lastIndexOf("java");
+document.getElementById("demo3").innerHTML = "starts with I : " +str.startsWith("I");
+document.getElementById("demo5").innerHTML = "starts with learn : " +str.startsWith("learn",2);
+document.getElementById("demo4").innerHTML = "ends with java: " +str.endsWith("java");
+document.getElementById("demo6").innerHTML = "includes script: " +str.includes("script");
+</script>
+
+</body>
+</html>
