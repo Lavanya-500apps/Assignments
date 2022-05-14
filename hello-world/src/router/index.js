@@ -49,6 +49,7 @@ import pprops from "@/components/27-04-2022/pprops.vue";
 import pemit from "@/components/27-04-2022/pemit.vue";
 import pref from "@/components/27-04-2022/pref.vue";
 import computed from "@/components/14-05-2022/computed.vue";
+import btabs from "@/components/14-05-2022/btabs.vue";
 Vue.use(Router);
 
 const routes = [
@@ -99,6 +100,7 @@ const routes = [
   { path: "/pemit", name: "pemit", component: pemit},
   { path: "/pref", name: "pref", component: pref },
   { path: "/computed", name: "computed", component:computed},
+  { path: "/btabs", name: "btabs", component:btabs},
 ];
 
 let router = new Router({ routes });
