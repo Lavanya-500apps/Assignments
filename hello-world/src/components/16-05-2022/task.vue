@@ -7,7 +7,8 @@
       text-field="Name">
       </b-form-select><br><br>
     
-     subjects: <b-form-select v-model="selected" id="demo2" :options="subjects"></b-form-select><br><br>
+     subjects: <b-form-select v-model="selected" id="demo2" :options="subjects" value-field="name"
+      text-field="id"></b-form-select><br><br>
     <div>Selected: <strong>{{ selected }}</strong></div>
 
      date: <b-form-datepicker  v-model="value" id="demo3"></b-form-datepicker><br>
@@ -20,7 +21,7 @@
       <b-button variant="danger" @click="fun1()">submit</b-button><br><br>
           <b-rows>
               <b-col cols=4>
-        <b-table striped hover :items="studentdata" :fields="fields"> </b-table>
+        <b-table striped hover :items="studentdata" > </b-table>
               </b-col></b-rows>
  </b-col></b-rows> 
         
@@ -43,10 +44,15 @@ export default {
         }],
         students:[],
         selected: null,
-        subjects: [
-          { value: 'english', text: '1' },
-          { value: 'mathematics', text: '2' },
-          { value: 'electronics', text: '3' }],
+        // subjects: [
+        //     {value: null, text:'select subject'},
+        //   { value: 'english', text: '1' },
+        //   { value: 'mathematics', text: '2' },
+        //   { value: 'electronics', text: '3' }],
+         subjects: [{id:'select subject',name: null, },
+          {id : 1, name : 'English'} , 
+         { id: 2 , name : 'Mathematics'} ,
+          { id: 3 , name : 'Electronics'} ]
 
       };
   },
