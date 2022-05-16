@@ -11,11 +11,11 @@
       text-field="id"></b-form-select><br><br>
     <div>Selected: <strong>{{ selected }}</strong></div>
 
-     date: <b-form-datepicker  v-model="value" id="demo3"></b-form-datepicker><br>
-     marks:<b-form-input v-model="value" type="number"
+     date: <b-form-datepicker  v-model="value1" id="demo3"></b-form-datepicker><br>
+     marks:<b-form-input v-model="value2" type="number"
       id="demo4" placeholder="enter student marks upto 100"
        min="0" max="100"></b-form-input><br>
-     remarks:<b-form-input v-model="value" type="text"
+     remarks:<b-form-input v-model="value3" type="text"
       id="demo5" ></b-form-input><br>
      
       <b-button variant="danger" @click="fun1()">submit</b-button><br><br>
@@ -37,7 +37,7 @@ export default {
         
         studentdata:[{
         students:"",
-        subject:"",
+        subjects:"",
         //date:"",
         marks:"",
         remarks:"",
@@ -49,7 +49,7 @@ export default {
         //   { value: 'english', text: '1' },
         //   { value: 'mathematics', text: '2' },
         //   { value: 'electronics', text: '3' }],
-         subjects: [{id:'select subject',name: null, },
+         subjects: [{id:'select subject',name: null},
           {id : 1, name : 'English'} , 
          { id: 2 , name : 'Mathematics'} ,
           { id: 3 , name : 'Electronics'} ]
@@ -71,7 +71,7 @@ export default {
         this.studentdata.push({
 
         students: document.getElementById("demo1").value,
-        subject: document.getElementById("demo2").value,
+        subjects: document.getElementById("demo2").value,
         //date: document.getElementById("demo3").value,
         marks: document.getElementById("demo4").value,
         remarks: document.getElementById("demo5").value,
