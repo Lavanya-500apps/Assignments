@@ -1,10 +1,10 @@
 <template>
   <div>
-    <center>
+    
       <b-card>
         <h1><u>Student Data</u></h1>
         <b-rows>
-          <b-col cols="4">
+          <b-col cols="2">
             <b>students:</b>
             <b-form-select
               v-model="studentValue"
@@ -18,7 +18,7 @@
 
             <b>subjects:</b>
             <b-form-select
-              v-model="subjectValue"
+              v-model="selected"
               id="subjects"
               :options="subjects"
               value-field="name"
@@ -42,12 +42,12 @@
               max="100"
             ></b-form-input
             ><br />
-            <b>remarks:</b
-            ><b-form-input
+            <b>remarks:</b><br>
+            <b-textarea
               v-model="remarksValue"
               type="text"
               id="remarks"
-            ></b-form-input
+            ></b-textarea
             ><br />
             <p id="StudentForm"></p>
             <b-button variant="success" @click="object_data()">Save</b-button
@@ -55,21 +55,30 @@
 
             <b-button variant="danger" @click="table_data()">submit</b-button
             ><br /><br />
-
-            <b-table striped hover :items="studentData"> </b-table> </b-col
+            
+            <b-table striped hover :items="StudentData"> </b-table> </b-col
         ></b-rows>
       </b-card>
-    </center>
+    
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from "axios"
 export default {
   name: "StudentForm",
   data() {
     return {
       studentData: [
+        {
+          studentsid: "",
+          subject: "",
+          date: "",
+          marks: "",
+          remarks: "",
+        },
+      ],
+      StudentData: [
         {
           studentsid: "",
           subject: "",
@@ -105,15 +114,22 @@ export default {
       this.students = await response.data;
     },
     table_data() {
-      this.studentData.push({
+      this.StudentData.push({
         studentsid: document.getElementById("names").value,
         subject: document.getElementById("subjects").value,
-        date: document.getElementById("date").value,
+        date: this.dateValue,
         marks: document.getElementById("marks").value,
         remarks: document.getElementById("remarks").value,
       });
     },
     object_data() {
+      this.studentData.push({
+        studentsid: document.getElementById("names").value,
+        subject: document.getElementById("subjects").value,
+        date: this.dateValue,
+        marks: document.getElementById("marks").value,
+        remarks: document.getElementById("remarks").value,
+      });
       document.getElementById("StudentForm").innerHTML = JSON.stringify(
         this.studentData
       );

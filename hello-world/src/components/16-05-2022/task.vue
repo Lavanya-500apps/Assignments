@@ -1,84 +1,131 @@
 <template>
   <div>
-      
-      <b-rows >
-              <b-col cols=4>
-      students: <b-form-select v-model="value" id="demo1" :options="students" value-field="id"
-      text-field="Name">
-      </b-form-select><br><br>
-    
-     subjects: <b-form-select v-model="selected" id="demo2" :options="subjects" value-field="name"
-      text-field="id"></b-form-select><br><br>
-    <div>Selected: <strong>{{ selected }}</strong></div>
+    <h1><u>Student Data</u></h1>
+    <b-form>
+      <b-row>
+        <b-col cols="2">
+          <b>students:</b>
+          <b-form-select
+            v-model="studentValue"
+            id="names"
+            :options="students"
+            value-field="id"
+            text-field="Name"
+            required
+          >
+          </b-form-select
+          ><br /><br
+        /></b-col>
+        <b-col cols="2">
+          <b>subjects:</b>
+          <b-form-select
+            v-model="subjectValue"
+            id="subjects"
+            :options="subjects"
+            value-field="id"
+            text-field="name"
+            required
+          ></b-form-select
+          ><br /><br />
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col cols="2">
+          <b>date:</b>
+          <b-form-datepicker
+            v-model="dateValue"
+            id="date"
+            required
+          ></b-form-datepicker
+          ><br />
+        </b-col>
+      </b-row>
 
-     date: <b-form-datepicker  v-model="value1" id="demo3"></b-form-datepicker><br>
-     marks:<b-form-input v-model="value2" type="number"
-      id="demo4" placeholder="enter student marks upto 100"
-       min="0" max="100"></b-form-input><br>
-     remarks:<b-form-input v-model="value3" type="text"
-      id="demo5" ></b-form-input><br>
-     
-      <b-button variant="danger" @click="fun1()">submit</b-button><br><br>
-          <b-rows>
-              <b-col cols=4>
-        <b-table striped hover :items="studentdata" > </b-table>
-              </b-col></b-rows>
- </b-col></b-rows> 
-        
+      <b-row>
+        <b-col cols="2">
+          <b> marks:</b
+          ><b-form-input
+            v-model="marksValue"
+            type="number"
+            id="marks"
+            placeholder="enter student marks upto 100"
+            min="0"
+            max="100"
+            required
+          ></b-form-input
+          ><br
+        /></b-col>
+        <b-col cols="2">
+          <b>remarks:</b><br />
+          <b-textarea
+            v-model="remarksValue"
+            type="text"
+            id="remarks"
+            required
+          ></b-textarea
+          ><br /></b-col
+      ></b-row>
+
+      <b-row>
+        <b-col >
+          <p id="StudentForm"></p>
+          <b-button variant="success" @click="display_data()">submit</b-button
+          ><br /><br />
+          <b-table striped hover sticky-header :items="StudentData"> </b-table> </b-col
+      ></b-row>
+    </b-form>
   </div>
 </template>
 
 <script>
 import axios from "axios"
 export default {
-  name: "TAsk",
+  name: "StudentForm",
   data() {
     return {
-        
-        studentdata:[{
-        students:"",
-        subjects:"",
-        //date:"",
-        marks:"",
-        remarks:"",
-        }],
-        students:[],
-        selected: null,
-        // subjects: [
-        //     {value: null, text:'select subject'},
-        //   { value: 'english', text: '1' },
-        //   { value: 'mathematics', text: '2' },
-        //   { value: 'electronics', text: '3' }],
-         subjects: [{id:'select subject',name: null},
-          {id : 1, name : 'English'} , 
-         { id: 2 , name : 'Mathematics'} ,
-          { id: 3 , name : 'Electronics'} ]
+      StudentData: [
+        {
+          studentsid: "",
+          subject: "",
+          date: "",
+          marks: "",
+          remarks: "",
+        },
+      ],
+      students: [],
+      selected: null,
+      show: true,
+      subjects: [
+        { id: null, name: "select subject" },
+        { id: 1, name: "English" },
+        { id: 2, name: "Mathematics" },
+        { id: 3, name: "Electronics" },
+      ],
+    };
+  },
+  async mounted() {
+    await this.getData();
+  },
 
-      };
-  },
-  async mounted(){
-       await this.fun(); 
-  },
-  
   methods: {
-    async fun() {
-      let response = 
-      await axios.get("https://api.sampleapis.com/baseball/battingAvgsSingleSeason");
-      this.students= await response.data;
+    async getData() {
+      let response = await axios.get(
+        "https://api.sampleapis.com/baseball/battingAvgsSingleSeason"
+      );
+      this.students = await response.data;
     },
-    fun1(){
-
-        this.studentdata.push({
-
-        students: document.getElementById("demo1").value,
-        subjects: document.getElementById("demo2").value,
-        //date: document.getElementById("demo3").value,
-        marks: document.getElementById("demo4").value,
-        remarks: document.getElementById("demo5").value,
-       
-         });
-           
-          },
+    display_data() {
+      this.StudentData.push({
+        studentsid: this.studentValue,
+        subject: this.subjectValue,
+        date: this.dateValue,
+        marks: this.marksValue,
+        remarks: this.remarksValue,
+      });
+      document.getElementById("StudentForm").innerHTML = JSON.stringify(
+        this.StudentData
+      );
+    },
   },
 };
 </script>
