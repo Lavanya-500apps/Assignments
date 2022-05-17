@@ -1,7 +1,7 @@
 <template>
   <div>
     
-      <b-card>
+      <b-card center>
         <h1><u>Student Data</u></h1>
         <b-rows>
           <b-col cols="2">
