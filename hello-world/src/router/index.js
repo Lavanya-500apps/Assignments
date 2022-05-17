@@ -50,6 +50,9 @@ import pemit from "@/components/27-04-2022/pemit.vue";
 import pref from "@/components/27-04-2022/pref.vue";
 import computed from "@/components/14-05-2022/computed.vue";
 import btabs from "@/components/14-05-2022/btabs.vue";
+import formtask from "@/components/16-05-2022/formtask.vue";
+import task from "@/components/16-05-2022/task.vue";
+import eg from "@/components/17-05-2022/eg.vue";
 Vue.use(Router);
 
 const routes = [
@@ -82,7 +85,7 @@ const routes = [
   { path: "/task1", name: "task1", component: task1 },
   { path: "/task2", name: "task2", component: task2 },
   { path: "/tab", name: "tab", component: tab },
-  { path: "/tabtask", name: "task", component: tabtask },
+  { path: "/tabtask", name: "tabtask", component: tabtask },
   { path: "/async", name: "async", component: async },
   { path: "/tabtable", name: "tabtable", component: tabtable },
   { path: "/pageaxios", name: "pageaxios", component: pageaxios },
@@ -101,6 +104,9 @@ const routes = [
   { path: "/pref", name: "pref", component: pref },
   { path: "/computed", name: "computed", component:computed},
   { path: "/btabs", name: "btabs", component:btabs},
+  { path: "/formtask", name: "formtask", component:formtask},
+  { path: "/task", name: "task", component:task},
+  { path: "/eg", name: "eg", component:eg},
 ];
 
 let router = new Router({ routes });
