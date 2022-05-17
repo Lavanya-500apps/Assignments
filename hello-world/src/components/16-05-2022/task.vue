@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1><u>Student Data</u></h1>
-    <b-form>
+    <b-form @submit="display_data">
       <b-row>
         <b-col cols="2">
           <b>students:</b>
@@ -69,7 +69,7 @@
       <b-row>
         <b-col >
           <p id="StudentForm"></p>
-          <b-button variant="success" @click="display_data()">submit</b-button
+          <b-button variant="success" type="submit">submit</b-button
           ><br /><br />
           <b-table striped hover sticky-header :items="StudentData"> </b-table> </b-col
       ></b-row>
