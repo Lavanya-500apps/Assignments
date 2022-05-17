@@ -26,7 +26,7 @@ export default {
   data() {
     return{
        
-      fields: ["userId", "id", "title", "completed"],
+      //fields: ["userId", "id", "title", "completed"],
        text:" ",
     }
   },
@@ -38,7 +38,7 @@ export default {
         
     },
     async fun1() {
-      let response=await axios.get("https://jsonplaceholder.typicode.com/todos")
+      let response=await axios.get("https://api.sampleapis.com/baseball/battingAvgsSingleSeason")
       this.text=await response.data
      
         

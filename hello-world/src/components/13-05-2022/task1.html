@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>remove duplicates from array</h2>
+        
+        <h2>remove duplicates from object</h2>
+        
+        <script>
+            let array=[1,2,3,2,4,3,4,5,5,7,8,6,9,2];
+            let res=("array result="+[...new Set(array)]);
+            document.write(res+"<br>")
+
+            let books = [{ title: "C++", author: "Bjarne" },
+
+                  { title: "Java", author: "James" },
+
+                  { title: "Python", author: "Guido" },
+
+                  { title: "Java", author: "James" }]; 
+
+                 
+               let result=("object result="+[...new Set(books.map(e=> JSON.stringify(e)))]);
+               document.write(result)
+
+               
+              
+                
+        </script>
+    </body>
+</html>
