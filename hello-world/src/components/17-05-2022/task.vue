@@ -32,11 +32,13 @@
       <b-row>
         <b-col cols="2">
           <b>date:</b>
-          <b-form-datepicker
+          <b-form-input
             v-model="StudentData.date"
             id="date"
+            class="datepicker"
+            type="date"
             required
-          ></b-form-datepicker
+          ></b-form-input
           ><br />
         </b-col>
       </b-row>
@@ -67,31 +69,34 @@
       ></b-row>
 
       <b-row>
-        <b-col >
+        <b-col>
           <p id="StudentForm"></p>
           <b-button variant="success" type="submit">submit</b-button
           ><br /><br />
-          <b-table striped hover sticky-header :items="StudentData"> </b-table> </b-col
+          <b-button variant="danger" @click="reset()" type="submit"
+            >reset</b-button
+          ><br />
+          <b-table striped hover sticky-header :items="StudentData">
+          </b-table> </b-col
       ></b-row>
     </b-form>
   </div>
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
   name: "StudentForm",
   data() {
     return {
-      StudentData: 
-        {
-          studentsid: "",
-          subject: "",
-          date: "",
-          marks: "",
-          remarks: "",
-        },
-      
+      StudentData: {
+        studentsid: "",
+        subject: "",
+        date: "",
+        marks: "",
+        remarks: "",
+      },
+
       students: [],
       subjects: [
         { id: null, name: "select subject" },
@@ -123,6 +128,13 @@ export default {
       document.getElementById("StudentForm").innerHTML = JSON.stringify(
         this.StudentData
       );
+    },
+    reset() {
+      (this.StudentData.studentsid = ""),
+        (this.StudentData.subject = ""),
+        (this.StudentData.date = ""),
+        (this.StudentData.marks = ""),
+        (this.StudentData.remarks = "");
     },
   },
 };
