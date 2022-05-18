@@ -76,7 +76,7 @@
           <b-button variant="danger" @click="reset()" type="submit"
             >reset</b-button
           ><br />
-          <b-table striped hover sticky-header :items="StudentData">
+          <b-table striped hover sticky-header :items="studentData">
           </b-table> </b-col
       ></b-row>
     </b-form>
@@ -96,6 +96,13 @@ export default {
         marks: "",
         remarks: "",
       },
+      studentData: [{
+        studentsid: "",
+        subject: "",
+        date: "",
+        marks: "",
+        remarks: "",
+      }],
 
       students: [],
       subjects: [
@@ -118,13 +125,13 @@ export default {
       this.students = await response.data;
     },
     display_data() {
-      // this.StudentData.push({
-      //   studentsid: this.studentValue,
-      //   subject: this.subjectValue,
-      //   date: this.dateValue,
-      //   marks: this.marksValue,
-      //   remarks: this.remarksValue,
-      // });
+      this.studentData.push({
+        studentsid: this.StudentData.studentsid,
+        subject: this.StudentData.subject,
+        date: this.StudentData.date,
+        marks: this.StudentData.marks,
+        remarks: this.StudentData.remarks,
+      });
       document.getElementById("StudentForm").innerHTML = JSON.stringify(
         this.StudentData
       );
