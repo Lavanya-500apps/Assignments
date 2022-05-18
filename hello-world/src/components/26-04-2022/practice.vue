@@ -58,7 +58,7 @@ export default {
     f4() {
       this.values = this.A.forEach((arr) => 
         
-        document.write(arr)
+        document.write(arr*2)
       
       
       )},
