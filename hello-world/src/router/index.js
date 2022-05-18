@@ -51,7 +51,7 @@ import pref from "@/components/27-04-2022/pref.vue";
 import computed from "@/components/14-05-2022/computed.vue";
 import btabs from "@/components/14-05-2022/btabs.vue";
 import formtask from "@/components/16-05-2022/formtask.vue";
-//import toggle from "@/components/16-05-2022/toggle.vue";
+import es6 from "@/components/18-05-2022/es6.vue";
 import task from "@/components/17-05-2022/task.vue";
 import eg from "@/components/17-05-2022/eg.vue";
 
@@ -108,7 +108,7 @@ const routes = [
   { path: "/btabs", name: "btabs", component:btabs},
   { path: "/formtask", name: "formtask", component:formtask},
   { path: "/task", name: "task", component:task},
-  //{ path: "/toggle", name: "toggle", component:toggle},
+  { path: "/es6", name: "es6", component:es6},
   { path: "/eg", name: "eg", component:eg},
  
 ];

@@ -6,7 +6,7 @@
         <b-col cols="2">
           <b>students:</b>
           <b-form-select
-            v-model="StudentData.studentsid"
+            v-model="studentValue"
             id="names"
             :options="students"
             value-field="id"
@@ -19,7 +19,7 @@
         <b-col cols="2">
           <b>subjects:</b>
           <b-form-select
-            v-model="StudentData.subject"
+            v-model="subjectValue"
             id="subjects"
             :options="subjects"
             value-field="id"
@@ -32,13 +32,11 @@
       <b-row>
         <b-col cols="2">
           <b>date:</b>
-          <b-form-input
-            v-model="StudentData.date"
+          <b-form-datepicker
+            v-model="dateValue"
             id="date"
-            class="datepicker"
-            type="date"
             required
-          ></b-form-input
+          ></b-form-datepicker
           ><br />
         </b-col>
       </b-row>
@@ -47,7 +45,7 @@
         <b-col cols="2">
           <b> marks:</b
           ><b-form-input
-            v-model="StudentData.marks"
+            v-model="marksValue"
             type="number"
             id="marks"
             placeholder="enter student marks upto 100"
@@ -60,7 +58,7 @@
         <b-col cols="2">
           <b>remarks:</b><br />
           <b-textarea
-            v-model="StudentData.remarks"
+            v-model="remarksValue"
             type="text"
             id="remarks"
             required
@@ -69,15 +67,11 @@
       ></b-row>
 
       <b-row>
-        <b-col>
+        <b-col cols="4">
           <p id="StudentForm"></p>
-          <b-button variant="success" type="submit">submit</b-button
+          <b-button variant="danger" type="submit" >submit</b-button
           ><br /><br />
-          <b-button variant="danger" @click="reset()" type="submit"
-            >reset</b-button
-          ><br />
-          <b-table striped hover sticky-header :items="studentData">
-          </b-table> </b-col
+          <b-table striped hover :items="StudentData"> </b-table> </b-col
       ></b-row>
     </b-form>
   </div>
@@ -89,14 +83,8 @@ export default {
   name: "StudentForm",
   data() {
     return {
-      StudentData: {
-        studentsid: "",
-        subject: "",
-        date: "",
-        marks: "",
-        remarks: "",
-      },
-      studentData: [
+      
+      StudentData: [
         {
           studentsid: "",
           subject: "",
@@ -105,14 +93,18 @@ export default {
           remarks: "",
         },
       ],
-
-      students: [],
+      students: [],      
       subjects: [
         { id: null, name: "select subject" },
         { id: 1, name: "English" },
         { id: 2, name: "Mathematics" },
         { id: 3, name: "Electronics" },
       ],
+      // subjects: [
+      //     {value: null, text:'select subject'},
+      //   { value: 'english', text: '1' },
+      //   { value: 'mathematics', text: '2' },
+      //   { value: 'electronics', text: '3' }],
     };
   },
   async mounted() {
@@ -127,24 +119,18 @@ export default {
       this.students = await response.data;
     },
     display_data() {
-      this.studentData.push({
-        studentsid: this.StudentData.studentsid,
-        subject: this.StudentData.subject,
-        date: this.StudentData.date,
-        marks: this.StudentData.marks,
-        remarks: this.StudentData.remarks,
+      this.StudentData.push({
+        studentsid: this.studentValue,
+        subject: this.subjectValue,
+        date: this.dateValue,
+        marks: this.marksValue,
+        remarks: this.remarksValue,
       });
       document.getElementById("StudentForm").innerHTML = JSON.stringify(
         this.StudentData
       );
     },
-    reset() {
-      (this.StudentData.studentsid = ""),
-        (this.StudentData.subject = ""),
-        (this.StudentData.date = ""),
-        (this.StudentData.marks = ""),
-        (this.StudentData.remarks = "");
-    },
+        
   },
 };
 </script>
