@@ -54,6 +54,12 @@ import formtask from "@/components/16-05-2022/formtask.vue";
 import es6 from "@/components/18-05-2022/es6.vue";
 import task from "@/components/17-05-2022/task.vue";
 import eg from "@/components/17-05-2022/eg.vue";
+import signup from "@/components/18-05-2022/signup.vue";
+import login from "@/components/19-05-2022/login.vue";
+import registration from "@/components/19-05-2022/registration.vue";
+import forgetpassword from "@/components/19-05-2022/forgetpassword.vue";
+import note from "@/components/19-05-2022/note.vue";
+
 
 Vue.use(Router);
 
@@ -110,8 +116,15 @@ const routes = [
   { path: "/task", name: "task", component:task},
   { path: "/es6", name: "es6", component:es6},
   { path: "/eg", name: "eg", component:eg},
+  { path: "/signup", name: "signup", component:signup},
+  { path: "/login", name: "login", component:login},
+  { path: "/registration", name: "registration", component:registration},
+  { path: "/forgetpassword", name: "forgetpassword", component:forgetpassword},
+  { path: "/note", name: "note", component:note},
+   
  
 ];
+
 
 let router = new Router({ routes });
 
