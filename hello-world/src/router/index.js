@@ -54,7 +54,7 @@ import formtask from "@/components/16-05-2022/formtask.vue";
 import es6 from "@/components/18-05-2022/es6.vue";
 import task from "@/components/17-05-2022/task.vue";
 import eg from "@/components/17-05-2022/eg.vue";
-import signup from "@/components/18-05-2022/signup.vue";
+import signup from "@/components/19-05-2022/signup.vue";
 import login from "@/components/19-05-2022/login.vue";
 import registration from "@/components/19-05-2022/registration.vue";
 import forgetpassword from "@/components/19-05-2022/forgetpassword.vue";
