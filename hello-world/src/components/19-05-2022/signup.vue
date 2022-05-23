@@ -5,7 +5,7 @@
       <b-card style="width: 30rem; height: 500px; background-color: lightgreen"
         ><br />
         <b-form>
-          <h3><u>Sign In </u></h3>
+          <h3><u>Sign In </u></h3><br>
 
           <b-col>
             <b>Email address:</b>
@@ -63,7 +63,8 @@ export default {
     signin() {
       if (this.Form.email && this.Form.password) {
         alert("login successfull");
-        window.location.assign("http://localhost:8080/#/note");
+        this.$router.push("/note");
+        //window.location.assign("http://localhost:8080/#/note");
       } else {
         alert("please give email and password");
       }

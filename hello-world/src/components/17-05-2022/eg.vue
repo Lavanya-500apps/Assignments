@@ -71,6 +71,7 @@
           <p id="StudentForm"></p>
           <b-button variant="danger" type="submit" >submit</b-button
           ><br /><br />
+          <b-button variant="danger" type="Reset">reset</b-button>
           <b-table striped hover :items="StudentData"> </b-table> </b-col
       ></b-row>
     </b-form>

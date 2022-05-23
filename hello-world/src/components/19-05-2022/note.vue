@@ -6,7 +6,7 @@
         ><br />
         <h1><b>Welcome to Notepad Application</b></h1>
         <br /><br /><br />
-        <div>
+        <!-- <div>
           <b-dropdown
             id="dropdown-left"
             text="Home"
@@ -27,7 +27,19 @@
             >
           </b-dropdown>
         </div>
-        <br /><br />
+        <br /><br /> -->
+        <div>
+          <b-dropdown
+            id="dropdown-left"
+            text="Home"
+            variant="primary"
+            class="m-2"
+          >
+            <b-dropdown-item @click="logout()" variant="danger"
+              >logout</b-dropdown-item
+            >
+          </b-dropdown>
+        </div>
 
         <b-button
           v-b-toggle.sidebar-left
@@ -39,16 +51,20 @@
         </b-button>
 
         <b-sidebar id="sidebar-left" title="Textbox">
-          <b>textInbox:</b><br />
-          <textarea
-            v-model="textInbox"
-            type="text"
-            id="text"
-            required
-          ></textarea
+          <b>Message:</b><br />
+          <textarea v-model="message" type="text" id="text" required></textarea
           ><br />
           <b-button @click="save()" type="submit" variant="warning"
             >save </b-button
+          >&nbsp;
+          <b-button @click="retrive()" type="submit" variant="warning"
+            >retrive </b-button
+          >&nbsp;
+          <b-button @click="remove()" type="submit" variant="warning"
+            >remove</b-button
+          >&nbsp;
+          <b-button @click="clear()" type="submit" variant="warning"
+            >clear </b-button
           >&nbsp;<br />
 
           <p id="Text"></p>
@@ -63,26 +79,26 @@ export default {
   name: "NoteApplication",
   data() {
     return {
-      textInbox: "",
+      message: "",
       result: "",
     };
   },
   methods: {
     save() {
       // document.getElementById("Text").innerHTML = JSON.stringify(
-      //   this.textInbox
+      //   this.message
       // );
       alert("do you want to save");
-      localStorage.setItem("textInbox", this.textInbox);
-      sessionStorage.setItem("textInbox", this.textInbox);
+      localStorage.setItem("message", this.message);
+      sessionStorage.setItem("message", this.message);
     },
     retrive() {
-      this.result = this.textInbox;
+      this.result = this.message;
     },
 
     logout() {
-      //this.$router.push("/signup");
-      this.$router.push("/login");
+      this.$router.push("/signup");
+      //this.$router.push("/login");
     },
 
     clear() {
@@ -91,8 +107,8 @@ export default {
     },
 
     remove() {
-      localStorage.removeItem("textInbox");
-      sessionStorage.removeItem("textInbox");
+      localStorage.removeItem("message");
+      sessionStorage.removeItem("message");
     },
   },
 };
