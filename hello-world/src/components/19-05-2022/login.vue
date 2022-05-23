@@ -30,7 +30,7 @@
               placeholder="Enter password"
               required
             ></b-form-input> </b-col
-          ><br />
+          ><br /><br>
 
           <b-button
             type="submit"

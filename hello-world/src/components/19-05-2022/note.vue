@@ -50,7 +50,7 @@
           <b-button @click="save()" type="submit" variant="warning"
             >save </b-button
           >&nbsp;<br />
-          
+
           <p id="Text"></p>
         </b-sidebar>
       </b-card>
@@ -81,8 +81,8 @@ export default {
     },
 
     logout() {
-      this.$router.push("/signup");
-      //this.$router.push("/login");
+      //this.$router.push("/signup");
+      this.$router.push("/login");
     },
 
     clear() {

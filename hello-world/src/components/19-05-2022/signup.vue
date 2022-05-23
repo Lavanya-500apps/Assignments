@@ -34,6 +34,7 @@
 
           <b-button
             size="lg"
+            type="submit"
             @click="signin()"
             variant="outline-primary"
             class="btn btn-dark btn-lg btn-block"
