@@ -59,6 +59,7 @@ import login from "@/components/19-05-2022/login.vue";
 import registration from "@/components/19-05-2022/registration.vue";
 import forgetpassword from "@/components/19-05-2022/forgetpassword.vue";
 import note from "@/components/19-05-2022/note.vue";
+//import page from "@/components/23-05-2022/page.vue";
 
 
 Vue.use(Router);
@@ -121,6 +122,7 @@ const routes = [
   { path: "/registration", name: "registration", component:registration},
   { path: "/forgetpassword", name: "forgetpassword", component:forgetpassword},
   { path: "/note", name: "note", component:note},
+  //{ path: "/page", name: "page", component:page},
    
  
 ];

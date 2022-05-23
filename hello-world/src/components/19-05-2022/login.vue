@@ -30,17 +30,21 @@
               placeholder="Enter password"
               required
             ></b-form-input> </b-col
-          ><br /><br /><br />
+          ><br />
 
           <b-button
-            size="lg"
+            type="submit"
             @click="signin()"
             variant="outline-primary"
             class="btn btn-dark btn-lg btn-block"
-            >signin
-            <!-- <router-link to="/note">Sign in</router-link> --> </b-button
+          >
+            Sign In </b-button
           >&nbsp;<br />
           <b-button variant="danger" type="Reset">reset</b-button>
+
+          <!-- <p class="forgot-password text-right mt-2 mb-4">
+            <router-link to="/forgetpassword">Forgot password ?</router-link>
+          </p> -->
         </b-form>
       </b-card>
     </center>
