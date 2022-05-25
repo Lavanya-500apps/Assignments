@@ -2,7 +2,7 @@
   <div>
     <center>
       <br /><br />
-      <b-card style="background-color: lightblue; height: 45rem" class="w-25"
+      <b-card style="background-color: lightgreen; height: 45rem" class="w-25"
         ><br />
         <h1><b>Welcome to Notepad Application</b></h1>
         <br /><br /><br />
@@ -88,14 +88,13 @@ export default {
   },
   methods: {
     save() {
-      // document.getElementById("Text").innerHTML = JSON.stringify(
+      // document.getElementById("Text").innerHTML = JSON.stringify("message:" + 
       //   this.message
       // );
       alert("do you want to save");
       localStorage.setItem("message", this.message);
       sessionStorage.setItem("message", this.message);
-      this.data = "message:" + localStorage.getItem("message");
-
+       this.data = "message:" + localStorage.getItem("message");
       return this.data;
     },
     retrive() {
