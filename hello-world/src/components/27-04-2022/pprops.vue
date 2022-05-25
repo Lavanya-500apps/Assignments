@@ -8,7 +8,7 @@
 <script>
 import cprops from './cprops.vue'
 export default {
-    name:"parentPROPs",
+    name:"ParentProps",
     components:{
         cprops
     },
@@ -20,12 +20,7 @@ export default {
         res:[]
     }
   },
-  methods:{
-      fun(){
-          this.res=this.array.pop();
-          
-      }
-  }
+  
 };
 </script>
 

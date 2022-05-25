@@ -28,7 +28,7 @@ export default {
       array:{
         type:Array
       }
-      //res:Function
+      
     }
     
     
