@@ -68,6 +68,8 @@
           >&nbsp;<br />
 
           <p id="Text"></p>
+          {{ data }}<br /><br />
+          <b-card>{{ data1 }}</b-card>
         </b-sidebar>
       </b-card>
     </center>
@@ -80,7 +82,8 @@ export default {
   data() {
     return {
       message: "",
-      result: "",
+      data: "",
+      data1: "",
     };
   },
   methods: {
@@ -91,9 +94,14 @@ export default {
       alert("do you want to save");
       localStorage.setItem("message", this.message);
       sessionStorage.setItem("message", this.message);
+      this.data = "message:" + localStorage.getItem("message");
+
+      return this.data;
     },
     retrive() {
-      this.result = this.message;
+      this.data1 = "message:" + localStorage.getItem("message");
+
+      return this.data1;
     },
 
     logout() {
