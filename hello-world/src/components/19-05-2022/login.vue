@@ -5,7 +5,7 @@
       <b-card style="width: 30rem; height: 500px; background-color: lightgreen"
         ><br />
         <b-form>
-          <h3><u>Sign In </u></h3><br>
+          <h3><u>Sign In <b-avatar variant="success" id="avatar"></b-avatar></u></h3><br>
 
           <b-col>
             <b>Email address:</b>
