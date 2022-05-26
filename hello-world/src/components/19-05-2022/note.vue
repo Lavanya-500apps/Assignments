@@ -100,7 +100,7 @@ export default {
       localStorage.setItem("message", this.message);
       sessionStorage.setItem("message", this.message);
       this.data = "message:" + localStorage.getItem("message");
-      if(this.data)this.message=""
+      if(this.data)this.message="";
       return this.data;
     },
     retrive() {

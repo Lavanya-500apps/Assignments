@@ -36,6 +36,7 @@ export default {
     emit(change) {
       this.id = change.id;
       this.age = change.age;
+      this.books[1].title=change.title;
     },
     ref_parent() {
       this.$refs.number.ref_child();

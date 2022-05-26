@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     change_name() {
-      this.$emit("change", { id: "1199", age: 25 });
+      this.$emit("change", { id: "1199", age: 25 ,title:"AWS"});
     },
     ref_child() {
       let array = [1, 2, 3];
