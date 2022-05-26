@@ -54,6 +54,11 @@
           <b>Message:</b><br />
           <textarea v-model="message" type="text" id="text" required></textarea
           ><br />
+          <b-form-file
+            accept=".jpg, .png, .gif"
+            v-model="file"
+            plain
+          ></b-form-file><br><br>
           <b-button @click="save()" type="submit" variant="warning"
             >save </b-button
           >&nbsp;
@@ -88,13 +93,13 @@ export default {
   },
   methods: {
     save() {
-      // document.getElementById("Text").innerHTML = JSON.stringify("message:" + 
+      // document.getElementById("Text").innerHTML = JSON.stringify("message:" +
       //   this.message
       // );
       alert("do you want to save");
       localStorage.setItem("message", this.message);
       sessionStorage.setItem("message", this.message);
-       this.data = "message:" + localStorage.getItem("message");
+      this.data = "message:" + localStorage.getItem("message");
       return this.data;
     },
     retrive() {

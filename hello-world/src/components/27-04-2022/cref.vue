@@ -14,7 +14,7 @@ export default {
     },
     methods:{
         fun(){
-          console.log("this is child")
+          document.write("this is child")
         },
         
     },
