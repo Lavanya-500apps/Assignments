@@ -1,6 +1,7 @@
 <template>
   <div>
       <cprops :name="name" :age="age" :array="array" ></cprops>
+      
 
   </div>
 </template>
@@ -17,6 +18,8 @@ export default {
         name:"lavanya",
         age:24,
         array:[1,2,3],
+        
+        
       
     }
   },
