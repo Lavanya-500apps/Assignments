@@ -62,7 +62,7 @@ import note from "@/components/19-05-2022/note.vue";
 import crud1 from "@/components/24-05-2022/crud1.vue";
 import crud2 from "@/components/24-05-2022/crud2.vue";
 import nextp from "@/components/26-05-2022/nextp.vue";
-
+import mixin from "@/components/26-05-2022/mixin.vue";
 
 
 Vue.use(Router);
@@ -128,6 +128,7 @@ const routes = [
   { path: "/crud1", name: "crud1", component:crud1},
   { path: "/crud2", name: "crud2", component:crud2},
   { path: "/nextp", name: "nextp", component:nextp},
+  { path: "/mixin", name: "mixin", component:mixin},
   
    
  
