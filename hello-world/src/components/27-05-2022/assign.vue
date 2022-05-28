@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-      <h1 style="color: white">Student Details</h1>
+      <h1 style="color: white">Student Details</h1>&nbsp;&nbsp;&nbsp;
       <b-col cols="2"
         ><h2 id="card" class="form-control form-control-lg">
           LoginUser:Lavanya
@@ -97,7 +97,7 @@
                         required
                       >
                       </b-form-select
-                      ><br />
+                      ><br /><br>
                     </b-col>
                   </b-row>
                 </template>

@@ -1,19 +1,20 @@
 <template>
-  <div>
+  <div class="text">
     <div class="text-left">
-      <b-button @click="Create" variant="info">ADD Student</b-button>
+      <b-button @click="Create()" variant="info">ADD Student</b-button>
     </div>
     <br /><br />
     <b-table striped hover bordered :items="tableData" :fields="columns">
       <template #cell(action)="data">
         <b-button @click="Edit(data.item)" variant="info">Edit</b-button>
         <b-button @click="Delete(data.item)" variant="danger">Delete</b-button>
+        
       </template>
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
       <b-form @submit.prevent="save">
         <slot :formdata="editedItem" name="input-fields"> </slot>
-
+   
         <b-button type="submit" variant="success"> Submit</b-button>&nbsp;
         <b-button type="Reset" variant="danger"> Reset</b-button>&nbsp;
       </b-form>
@@ -36,7 +37,7 @@ export default {
   },
   computed: {
     Title() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+      return this.editedIndex === -1 ? "Add Student" : "Edit Details";
     },
   },
   methods: {
@@ -44,6 +45,7 @@ export default {
       this.modalShow = true;
       this.editedItem = Object.assign({}, this.formFields);
       this.editedIndex = -1;
+     
     },
     Edit(item) {
       this.modalShow = true;
