@@ -1,5 +1,5 @@
 <template>
-  <div class="text">
+  <div>
     <div class="text-left">
       <b-button @click="Create()" variant="info">ADD Student</b-button>
     </div>
