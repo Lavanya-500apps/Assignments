@@ -1,29 +1,25 @@
 <template>
   <div>
     <div class="text-left">
-      <b-button @click="Create()" variant="info">ADD Student</b-button>
+      <b-button @click="Create()" variant="info"><b>ADD Student</b></b-button>
     </div>
     <br /><br />
     <b-table striped hover bordered :items="tableData" :fields="columns">
       <template #cell(action)="data">
-        <b-button @click="Edit(data.item)" variant="info">Edit</b-button>
+        <b-button @click="Edit(data.item)" variant="info">Edit</b-button>&nbsp;
         <b-button @click="Delete(data.item)" variant="danger">Delete</b-button>
-        
       </template>
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
       <b-form @submit.prevent="save">
         <slot :formdata="editedItem" name="input-fields"> </slot>
-   
         <b-button type="submit" variant="success"> Submit</b-button>&nbsp;
-        <b-button type="Reset" variant="danger"> Reset</b-button>&nbsp;
       </b-form>
     </b-modal>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "CRUDoperations",
   props: ["columns", "formFields"],
@@ -45,7 +41,6 @@ export default {
       this.modalShow = true;
       this.editedItem = Object.assign({}, this.formFields);
       this.editedIndex = -1;
-     
     },
     Edit(item) {
       this.modalShow = true;
@@ -56,7 +51,6 @@ export default {
       const index = this.tableData.indexOf(item);
       confirm("Are you sure you want to delete this item?") &&
         this.tableData.splice(index, 1);
-      
     },
     close() {
       this.modalShow = false;
@@ -68,14 +62,11 @@ export default {
     save() {
       if (this.editedIndex > -1) {
         Object.assign(this.tableData[this.editedIndex], this.editedItem);
-       
       } else {
         this.tableData.push(this.editedItem);
-        
       }
       this.close();
     },
   },
-  
 };
 </script>

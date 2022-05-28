@@ -1,15 +1,16 @@
 <template>
   <div>
     <nav>
-      <h1 style="color: white">Student Details</h1>&nbsp;&nbsp;&nbsp;
+      <h1 style="color: white"><b>Student Details</b></h1>
+      &nbsp;
       <b-col cols="2"
         ><h2 id="card" class="form-control form-control-lg">
-          LoginUser:Lavanya
+          <b>LoginUser:</b>Lavanya
         </h2></b-col
       >
       <b-card>
         <center>
-          <br /><br /><br /><b-row>
+          <br /><br /><b-row>
             <b-col cols="5">
               <cassign
                 :columns="[
@@ -22,7 +23,7 @@
                   'action',
                 ]"
                 :formFields="{
-                  Sno: '',
+                  //Sno: '',
                   Name: '',
                   age: '',
                   gender: '',
@@ -34,7 +35,7 @@
                 <template v-slot:input-fields="{ formdata }">
                   <b-row>
                     <b-col cols="5">
-                      S.no:
+                      <!-- <b> S.no:</b>
                       <b-form-input
                         id="input-1"
                         v-model="formdata.Sno"
@@ -43,8 +44,8 @@
                         placeholder="Enter serialNumber"
                       >
                       </b-form-input
-                      ><br />
-                      Name:
+                      ><br /> -->
+                      <b>Name:</b>
                       <b-form-input
                         id="input-2"
                         v-model="formdata.Name"
@@ -54,7 +55,7 @@
                       >
                       </b-form-input
                       ><br />
-                      Age:
+                      <b> Age:</b>
                       <b-form-input
                         id="input-3"
                         v-model="formdata.age"
@@ -66,7 +67,7 @@
                       >
                       </b-form-input
                       ><br />
-                      Gender:
+                      <b> Gender:</b>
                       <b-form-select
                         id="input-4"
                         v-model="formdata.gender"
@@ -77,7 +78,7 @@
                       >
                       </b-form-select
                       ><br />
-                      DateOfBirth:
+                      <b>DateOfBirth:</b>
                       <b-form-input
                         id="input-5"
                         v-model="formdata.dateofbirth"
@@ -87,7 +88,7 @@
                       >
                       </b-form-input
                       ><br />
-                      Class:
+                      <b>Class:</b>
                       <b-form-select
                         id="input-6"
                         v-model="formdata.class"
@@ -97,7 +98,7 @@
                         required
                       >
                       </b-form-select
-                      ><br /><br>
+                      ><br /><br />
                     </b-col>
                   </b-row>
                 </template>
@@ -119,28 +120,37 @@ export default {
   data() {
     return {
       genderOptions: [
-        { id: null, gender: "select Gender" },
-
-        { id: 1, gender: "male" },
-
-        { id: 2, gender: "female" },
+        { gender: "Select Gender" },
+        { gender: "Male" },
+        { gender: "Female" },
       ],
 
       classOptions: [
-        { id: null, class: "select class" },
-
-        { id: 1, class: "B-tech" },
-        { id: 2, class: "degree" },
-        { id: 3, class: "diploma" },
-        { id: 4, class: "inter" },
-        { id: 5, class: "SSC" },
+        { class: "Select Class" },
+        { class: "B-tech" },
+        { class: "Degree" },
+        { class: "Diploma" },
+        { class: "Inter" },
+        { class: "SSC" },
       ],
     };
   },
+  
 };
 </script>
 <style>
 nav {
   background-color: rgb(46, 46, 103);
+}
+#card {
+  position: relative;
+  left: 1570px;
+}
+.css-serial {
+ counter-reset: serial-number; /* Set the serial number counter to 0 */
+}
+.css-serial tr td:first-child:before {
+ counter-increment: serial-number; /* Increment the serial number counter */
+ content: counter(serial-number); /* Display the counter */
 }
 </style>
