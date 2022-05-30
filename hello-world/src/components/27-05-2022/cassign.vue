@@ -13,16 +13,11 @@
       :fields="columns"
     >
       <template #cell(action)="data">
-        <b-button @click="Edit(data.item)" variant="info">Edit</b-button>&nbsp;
+        <b-button @click="Edit(data.item)" variant="info"><b-icon-pencil-fill /></b-button>&nbsp;
         <b-button v-b-modal.modal-1 @click="hello(data.item)" variant="danger"
-          >Delete</b-button
+          ><b-icon-x-square /></b-button
         >
       </template>
-
-      <!-- <template>
-        <b-img v-if Gender="this.Male"></b-img>
-        <b-img v-else></b-img>
-      </template> -->
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
       <b-form @submit="save">
@@ -84,7 +79,6 @@ export default {
       //confirm("Are you sure you want to delete this item?") &&
       this.tableData.splice(index, 1);
     },
-
     close() {
       this.modalShow = false;
       setTimeout(() => {

@@ -33,9 +33,7 @@
               >
                 <!--  form input fields in this slot-->
                 <template v-slot:input-fields="{ formdata }">
-                  <b-row>
-                    <b-col cols="5">
-                      <!-- <b> S.no:</b>
+                  <!-- <b> S.no:</b>
                       <b-form-input
                         id="input-1"
                         v-model="formdata.Sno"
@@ -100,8 +98,6 @@
                       >
                       </b-form-select
                       ><br /><br />
-                    </b-col>
-                  </b-row>
                 </template>
               </cassign>
             </b-col>
@@ -114,7 +110,6 @@
 
 <script>
 import cassign from "./cassign.vue";
-
 export default {
   name: "Add_Student",
   components: { cassign },
@@ -125,7 +120,6 @@ export default {
         { id: "M", Gender: "Male" },
         { id: "F", Gender: "Female" },
       ],
-
       ClassOptions: [
         { Class: "Select Class" },
         { Class: "B-tech" },
@@ -136,7 +130,6 @@ export default {
       ],
     };
   },
-  
 };
 </script>
 <style>
