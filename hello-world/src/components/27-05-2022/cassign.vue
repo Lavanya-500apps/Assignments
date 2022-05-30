@@ -4,16 +4,30 @@
       <b-button @click="Create()" variant="info"><b>ADD Student</b></b-button>
     </div>
     <br /><br />
-    <b-table striped hover bordered :items="tableData" :fields="columns">
+    <b-table
+      class="css-serial"
+      striped
+      hover
+      bordered
+      :items="tableData"
+      :fields="columns"
+    >
       <template #cell(action)="data">
         <b-button @click="Edit(data.item)" variant="info">Edit</b-button>&nbsp;
         <b-button @click="Delete(data.item)" variant="danger">Delete</b-button>
       </template>
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
-      <b-form @submit.prevent="save">
-        <slot :formdata="editedItem" name="input-fields" > </slot>
-        <b-button id="submit" type="submit" variant="success"><b-icon-save/></b-button>&nbsp;
+      <b-form @submit="save">
+        <slot :formdata="editedItem" name="input-fields"> </slot>
+        <b-button
+          id="submit"
+          type="submit"
+          v-b-tooltip.hover.left
+          title="Save"
+          variant="success"
+          ><b-icon-save /></b-button
+        >&nbsp;
       </b-form>
     </b-modal>
   </div>
@@ -40,7 +54,7 @@ export default {
     Create() {
       this.modalShow = true;
       this.editedItem = Object.assign({}, this.formFields);
-      this.editedItem.Sno =this.tableData.length+1; 
+      // this.editedItem.Sno =this.tableData.length+1;
       this.editedIndex = -1;
     },
     Edit(item) {
@@ -72,11 +86,18 @@ export default {
 };
 </script>
 <style>
-#submit{
+#submit {
   position: relative;
-  bottom: 560px;
-  width:40px;
-  height:35px;
-  right:-400px;
+  bottom: 500px;
+  width: 40px;
+  height: 35px;
+  right: -400px;
+}
+.css-serial {
+  counter-reset: Student_details; /* Set the serial number counter to 0 */
+}
+.css-serial tr td:first-child:before {
+  counter-increment: Student_details; /* Increment the serial number counter */
+  content: counter(Student_details); /* Display the counter */
 }
 </style>

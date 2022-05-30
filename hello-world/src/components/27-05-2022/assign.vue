@@ -35,7 +35,7 @@
                 <template v-slot:input-fields="{ formdata }">
                   <b-row>
                     <b-col cols="5">
-                      <b> S.no:</b>
+                      <!-- <b> S.no:</b>
                       <b-form-input
                         id="input-1"
                         v-model="formdata.Sno"
@@ -44,7 +44,8 @@
                         placeholder="Enter serialNumber"
                       >
                       </b-form-input
-                      ><br />
+                      > -->
+                      <br />
                       <b>Name:</b>
                       <b-form-input
                         id="input-2"
@@ -73,7 +74,7 @@
                         v-model="formdata.Gender"
                         :options="GenderOptions"
                         value-field="Gender"
-                        text-field="Gender"
+                        text-field="id"
                         required
                       >
                       </b-form-select
@@ -120,9 +121,9 @@ export default {
   data() {
     return {
       GenderOptions: [
-        { Gender: "Select Gender" },
-        { Gender: "Male" },
-        { Gender: "Female" },
+        { id: "Select Gender", Gender: "Select Gender" },
+        { id: "M", Gender: "Male" },
+        { id: "F", Gender: "Female" },
       ],
 
       ClassOptions: [
@@ -135,7 +136,6 @@ export default {
       ],
     };
   },
-  
 };
 </script>
 <style>
@@ -145,12 +145,5 @@ nav {
 #card {
   position: relative;
   left: 1570px;
-}
-.css-serial {
- counter-reset: serial-number; /* Set the serial number counter to 0 */
-}
-.css-serial tr td:first-child:before {
- counter-increment: serial-number; /* Increment the serial number counter */
- content: counter(serial-number); /* Display the counter */
 }
 </style>
