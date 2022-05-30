@@ -14,8 +14,15 @@
     >
       <template #cell(action)="data">
         <b-button @click="Edit(data.item)" variant="info">Edit</b-button>&nbsp;
-        <b-button @click="Delete(data.item)" variant="danger">Delete</b-button>
+        <b-button v-b-modal.modal-1 @click="hello(data.item)" variant="danger"
+          >Delete</b-button
+        >
       </template>
+
+      <!-- <template>
+        <b-img v-if Gender="this.Male"></b-img>
+        <b-img v-else></b-img>
+      </template> -->
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
       <b-form @submit="save">
@@ -30,6 +37,14 @@
         >&nbsp;
       </b-form>
     </b-modal>
+    <b-modal
+      id="modal-1"
+      ref="deleteConfirmation"
+      title="Delete Details"
+      @ok="Delete"
+    >
+      Do you want to delete data?
+    </b-modal>
   </div>
 </template>
 
@@ -43,6 +58,7 @@ export default {
       modalShow: false,
       editedIndex: -1,
       tableData: [],
+      delete_data: null,
     };
   },
   computed: {
@@ -62,11 +78,13 @@ export default {
       this.editedIndex = this.tableData.indexOf(item);
       this.editedItem = Object.assign({}, item);
     },
-    Delete(item) {
-      const index = this.tableData.indexOf(item);
-      confirm("Are you sure you want to delete this item?") &&
-        this.tableData.splice(index, 1);
+    Delete() {
+      console.log("this.item", this.delete_data);
+      const index = this.tableData.indexOf(this.delete_data);
+      //confirm("Are you sure you want to delete this item?") &&
+      this.tableData.splice(index, 1);
     },
+
     close() {
       this.modalShow = false;
       setTimeout(() => {
@@ -81,6 +99,10 @@ export default {
         this.tableData.push(this.editedItem);
       }
       this.close();
+    },
+    hello(data) {
+      this.delete_data = data;
+      this.$refs.deleteConfirmation.show();
     },
   },
 };
