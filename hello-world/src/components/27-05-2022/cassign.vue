@@ -12,8 +12,8 @@
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
       <b-form @submit.prevent="save">
-        <slot :formdata="editedItem" name="input-fields"> </slot>
-        <b-button type="submit" variant="success"> Submit</b-button>&nbsp;
+        <slot :formdata="editedItem" name="input-fields" > </slot>
+        <b-button id="submit" type="submit" variant="success"><b-icon-save/></b-button>&nbsp;
       </b-form>
     </b-modal>
   </div>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "CRUDoperations",
+  name: "Student_Details",
   props: ["columns", "formFields"],
   data() {
     return {
@@ -40,6 +40,7 @@ export default {
     Create() {
       this.modalShow = true;
       this.editedItem = Object.assign({}, this.formFields);
+      this.editedItem.Sno =this.tableData.length+1; 
       this.editedIndex = -1;
     },
     Edit(item) {
@@ -70,3 +71,12 @@ export default {
   },
 };
 </script>
+<style>
+#submit{
+  position: relative;
+  bottom: 560px;
+  width:40px;
+  height:35px;
+  right:-400px;
+}
+</style>
