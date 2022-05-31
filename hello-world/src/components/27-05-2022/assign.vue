@@ -8,25 +8,24 @@
           <b>LoginUser:</b>Lavanya
         </h2></b-col
       >
-     
       <b-card>
         <center>
           <br /><br />
-              <cassign
-                :columns="[
-                  'Sno',
-                  'Name',
-                  'Age',
-                  'Gender',
-                  'DateOfBirth',
-                  'Class',
-                  'Action',
-                ]"
-                :formFields="{}"
-              >
-                <!--  form input fields in this slot-->
-                <template v-slot:input-fields="{ formdata }">
-                  <!-- <b> S.no:</b>
+          <cassign
+            :columns="[
+              'Sno',
+              'Name',
+              'Age',
+              'Gender',
+              'DateOfBirth',
+              'Class',
+              'Action',
+            ]"
+            :formFields="{}"
+          >
+            <!--  form input fields in this slot-->
+            <template v-slot:input-fields="{ formdata }">
+              <!-- <b> S.no:</b>
                       <b-form-input
                         id="input-1"
                         v-model="formdata.Sno"
@@ -36,64 +35,63 @@
                       >
                       </b-form-input
                       > -->
-                  <br />
-                  <b>Name:</b>
-                  <b-form-input
-                    id="input-2"
-                    v-model="formdata.Name"
-                    type="text"
-                    required
-                    placeholder="Enter name"
-                  >
-                  </b-form-input
-                  ><br />
-                  <b> Age:</b>
-                  <b-form-input
-                    id="input-3"
-                    v-model="formdata.Age"
-                    type="number"
-                    min="1"
-                    max="100"
-                    required
-                    placeholder="Enter Age"
-                  >
-                  </b-form-input
-                  ><br />
-                  <b> Gender:</b>
-                  <b-form-select
-                    id="input-4"
-                    v-model="formdata.Gender"
-                    :options="GenderOptions"
-                    value-field="Gender"
-                    text-field="id"
-                    required
-                  >
-                  </b-form-select
-                  ><br />
-                  <b>DateOfBirth:</b>
-                  <b-form-input
-                    id="input-5"
-                    v-model="formdata.DateOfBirth"
-                    type="date"
-                    required
-                    placeholder="Enter DateOfBirth"
-                  >
-                  </b-form-input
-                  ><br />
-                  <b>Class:</b>
-                  <b-form-select
-                    id="input-6"
-                    v-model="formdata.Class"
-                    :options="ClassOptions"
-                    value-field="Class"
-                    text-field="Class"
-                    required
-                  >
-                  </b-form-select
-                  ><br /><br />
-                </template>
-              </cassign>
-            
+              <br />
+              <b>Name:</b>
+              <b-form-input
+                id="input-2"
+                v-model="formdata.Name"
+                type="text"
+                required
+                placeholder="Enter name"
+              >
+              </b-form-input
+              ><br />
+              <b> Age:</b>
+              <b-form-input
+                id="input-3"
+                v-model="formdata.Age"
+                type="number"
+                min="1"
+                max="100"
+                required
+                placeholder="Enter Age"
+              >
+              </b-form-input
+              ><br />
+              <b> Gender:</b>
+              <b-form-select
+                id="input-4"
+                v-model="formdata.Gender"
+                :options="GenderOptions"
+                value-field="Gender"
+                text-field="id"
+                required
+              >
+              </b-form-select
+              ><br />
+              <b>DateOfBirth:</b>
+              <b-form-input
+                id="input-5"
+                v-model="formdata.DateOfBirth"
+                type="date"
+                required
+                placeholder="Enter DateOfBirth"
+              >
+              </b-form-input
+              ><br />
+              <b>Class:</b>
+              <b-form-select
+                id="input-6"
+                v-model="formdata.Class"
+                :options="ClassOptions"
+                value-field="Class"
+                text-field="Class"
+                required
+              >
+              </b-form-select
+              ><br /><br />
+            </template>
+          </cassign>
         </center>
       </b-card>
     </nav>
