@@ -75,7 +75,6 @@ export default {
       delete_data: null,
     };
   },
-
   computed: {
     Title() {
       return this.editedIndex === -1 ? "Add Student" : "Edit Details";

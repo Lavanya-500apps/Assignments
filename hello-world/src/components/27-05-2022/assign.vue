@@ -1,5 +1,6 @@
 <template>
   <div>
+    <br>
     <nav>
       <h1 style="color: white"><b>Student Details</b></h1>
       &nbsp;
