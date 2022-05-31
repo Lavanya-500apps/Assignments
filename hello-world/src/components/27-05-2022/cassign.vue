@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-left">
-      <b-button @click="Create()" variant="info"><b>ADD Student</b></b-button>
+      <b-button @click="Create()" variant="outline-primary"><b>ADD Student</b></b-button>
     </div>
     <br /><br />
     <b-table
@@ -14,12 +14,13 @@
     >
       <template #cell(action)="data">
         <b-button @click="Edit(data.item)" variant="info"><b-icon-pencil-fill /></b-button>&nbsp;
-        <b-button v-b-modal.modal-1 @click="hello(data.item)" variant="danger"
+        <b-button v-b-modal.modal-1 @click="remove(data.item)" variant="danger"
           ><b-icon-x-square /></b-button
         >
       </template>
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
+      <b-card style="width:29rem; height: 500px; background-color: lightgreen">
       <b-form @submit="save">
         <slot :formdata="editedItem" name="input-fields"> </slot>
         <b-button
@@ -31,6 +32,7 @@
           ><b-icon-save /></b-button
         >&nbsp;
       </b-form>
+      </b-card>
     </b-modal>
     <b-modal
       id="modal-1"
@@ -38,9 +40,11 @@
       title="Delete Details"
       @ok="Delete"
     >
+    <b-card style="width:29rem; height: 100px; background-color: lightgreen">
       Do you want to delete data?
+    </b-card>
     </b-modal>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -94,7 +98,7 @@ export default {
       }
       this.close();
     },
-    hello(data) {
+    remove(data) {
       this.delete_data = data;
       this.$refs.deleteConfirmation.show();
     },
@@ -104,10 +108,10 @@ export default {
 <style>
 #submit {
   position: relative;
-  bottom: 500px;
+  bottom: 515px;
   width: 40px;
   height: 35px;
-  right: -400px;
+  right: -380px;
 }
 .css-serial {
   counter-reset: Student_details; /* Set the serial number counter to 0 */

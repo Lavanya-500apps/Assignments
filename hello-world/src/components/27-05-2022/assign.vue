@@ -8,10 +8,10 @@
           <b>LoginUser:</b>Lavanya
         </h2></b-col
       >
+     
       <b-card>
         <center>
-          <br /><br /><b-row>
-            <b-col cols="5">
+          <br /><br />
               <cassign
                 :columns="[
                   'Sno',
@@ -93,8 +93,7 @@
                   ><br /><br />
                 </template>
               </cassign>
-            </b-col>
-          </b-row>
+            
         </center>
       </b-card>
     </nav>
