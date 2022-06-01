@@ -26,16 +26,6 @@
           >
             <!--  form input fields in this slot-->
             <template v-slot:input-fields="{ formdata }">
-              <!-- <b> S.no:</b>
-                      <b-form-input
-                        id="input-1"
-                        v-model="formdata.Sno"
-                        type="number"
-                        required
-                        placeholder="Enter serialNumber"
-                      >
-                      </b-form-input
-                      > -->
               <br />
               <b>Name:</b>
               <b-form-input
