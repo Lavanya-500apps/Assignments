@@ -95,7 +95,6 @@ export default {
     Delete() {
       console.log("this.item", this.delete_data);
       const index = this.tableData.indexOf(this.delete_data);
-      //confirm("Are you sure you want to delete this item?") &&
       this.tableData.splice(index, 1);
     },
     close() {
