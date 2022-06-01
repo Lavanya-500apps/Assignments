@@ -1,5 +1,8 @@
 <template>
   <div>
+    <b-icon icon="person" id="person" scale="1.5"></b-icon>
+    <b-icon icon="envelope" id="envelope" scale="1.5"></b-icon>
+    <b-icon icon="cursor" id="cursor" variant="dark" scale="1.5"></b-icon>
     <div class="text-left">
       <b-button @click="add_product()" variant="outline-primary"
         ><b>Add <b-icon-plus-circle-fill /></b></b-button
@@ -144,6 +147,21 @@ export default {
   width: 40px;
   height: 35px;
   right: -380px;
+}
+#person {
+  position: relative;
+  top: -100px;
+  left: -652px;
+}
+#envelope {
+  position: relative;
+  top: -100px;
+  left: -360px;
+}
+#cursor {
+  position: relative;
+  top: -100px;
+  left: -50px;
 }
 .css-serial {
   counter-reset: Product_details; /* Set the serial number counter to 0 */
