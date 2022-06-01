@@ -78,7 +78,7 @@ export default {
   props: ["Columns", "formFields"],
   data() {
     return {
-      perPage: 3,
+      perPage: 2,
       currentPage: 1,
       editedItem: this.formFields,
       modalShow: false,

@@ -90,7 +90,7 @@
           <b-form-input
             v-model="formdata.Quality"
             id="input-5"
-            type="text"
+            type="number"
             required
           >
           </b-form-input>
