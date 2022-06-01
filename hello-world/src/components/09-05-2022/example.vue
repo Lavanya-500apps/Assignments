@@ -1,51 +1,50 @@
 <template>
   <div>
-      <b-card>
-      <b-form-select v-model="value" :options="options"></b-form-select><br><br>
+    <b-card>
       <b-pagination
-      v-model="currentPage"
-      :total-rows="rows"
-      :per-page="perPage"></b-pagination>
+        v-model="currentPage"
+        :total-rows="rows"
+        :per-page="perPage"
+      ></b-pagination>
       <button @click="fun()">click</button>
-      <b-table striped hover :items="items" :fields="fields" :per-page="perPage"
-      :current-page="currentPage"></b-table>
-</b-card>
+      <b-table
+        striped
+        hover
+        :items="items"
+        :fields="fields"
+        :per-page="perPage"
+        :current-page="currentPage"
+      ></b-table>
+    </b-card>
   </div>
 </template>
 
 <script>
 export default {
- name:"EXample",
- data(){
-     return{
-         perPage:3,
-         currentPage:1,
-         items:"",
-         options:[],
-         fields:["userId","id","title","completed"]
-
-     }
- },
- methods: {
-    async fun(){
-         let response=await fetch("https://jsonplaceholder.typicode.com/todos")
-         this.items=await response.json()
-
-     }
- },
- computed: {
-     rows(){
-         return this.items.length
-     }
- },
- mounted() {
-    this.options = this.fields.map((row) => {
-      return { value: row, text: row };
-    });
+  name: "EXample",
+  data() {
+    return {
+      perPage: 3,
+      currentPage: 1,
+      items: "",
+      options: [],
+      fields: ["userId", "id", "title", "completed"],
+    };
   },
+  methods: {
+    async fun() {
+      let response = await fetch("https://jsonplaceholder.typicode.com/todos");
+      this.items = await response.json();
+    },
+  },
+  computed: {
+    rows() {
+      return this.items.length;
+    },
+  },
+  
+
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

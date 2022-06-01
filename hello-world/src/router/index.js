@@ -64,8 +64,8 @@ import crud2 from "@/components/20-05-2022/crud2.vue";
 import nextp from "@/components/26-05-2022/nextp.vue";
 import mixin from "@/components/26-05-2022/mixin.vue";
 import assign from "@/components/27-05-2022/assign.vue";
-import cassign from "@/components/27-05-2022/cassign.vue";
-//import home from "@/components/31-05-2022/home.vue";
+import sidebar from "@/components/31-05-2022/sidebar.vue";
+import pproduct from "@/components/31-05-2022/pproduct.vue";
 
 
 Vue.use(Router);
@@ -133,8 +133,8 @@ const routes = [
   { path: "/nextp", name: "nextp", component:nextp},
   { path: "/mixin", name: "mixin", component:mixin},
   { path: "/assign", name: "assign", component:assign},
-  { path: "/cassign", name: "cassign", component:cassign},
-  //{ path: "/home", name: "home", component:home},
+  { path: "/sidebar", name: "sidebar", component:sidebar},
+  { path: "/pproduct", name: "pproduct", component:pproduct},
   
    
  

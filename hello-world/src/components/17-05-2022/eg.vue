@@ -72,6 +72,9 @@
           <b-button variant="danger" type="submit" >submit</b-button
           ><br /><br />
           <b-button variant="danger" type="Reset">reset</b-button>
+          <!-- <b-button variant="danger" @click="reset()" type="submit"
+            >reset</b-button
+          ><br /> -->
           <b-table striped hover :items="StudentData"> </b-table> </b-col
       ></b-row>
     </b-form>
@@ -130,6 +133,13 @@ export default {
       document.getElementById("StudentForm").innerHTML = JSON.stringify(
         this.StudentData
       );
+      // reset() {
+    //   (this.StudentData.studentsid = ""),
+    //     (this.StudentData.subject = ""),
+    //     (this.StudentData.date = ""),
+    //     (this.StudentData.marks = ""),
+    //     (this.StudentData.remarks = "");
+    // },
     },
         
   },

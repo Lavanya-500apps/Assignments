@@ -73,10 +73,7 @@
           <p id="StudentForm"></p>
           <b-button variant="success" type="submit">submit</b-button
           ><br /><br />
-          <b-button variant="danger" type="Reset">reset</b-button>
-          <!-- <b-button variant="danger" @click="reset()" type="submit"
-            >reset</b-button
-          ><br /> -->
+          <b-button variant="danger" type="Reset">reset</b-button>        
           <b-table bordered striped hover sticky-header :items="studentData">
           </b-table> </b-col
       ></b-row>
@@ -139,13 +136,7 @@ export default {
         this.StudentData
       );
     },
-    // reset() {
-    //   (this.StudentData.studentsid = ""),
-    //     (this.StudentData.subject = ""),
-    //     (this.StudentData.date = ""),
-    //     (this.StudentData.marks = ""),
-    //     (this.StudentData.remarks = "");
-    // },
+    
   },
 };
 </script>
