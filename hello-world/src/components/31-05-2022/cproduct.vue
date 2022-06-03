@@ -3,6 +3,20 @@
     <b-icon icon="person" id="person" scale="1.5"></b-icon>
     <b-icon icon="envelope" id="envelope" scale="1.5"></b-icon>
     <b-icon icon="cursor" id="cursor" variant="dark" scale="1.5"></b-icon>
+    <b-input-group>
+      <b-row
+        ><b-col cols="12">
+          <b-form-input id="filter-input" v-model="filter">
+          </b-form-input> </b-col
+      ></b-row>
+
+      <b-input-group-append>
+        <b-button :disabled="!filter" variant="danger" @click="filter = ''"
+          >clear</b-button
+        >
+      </b-input-group-append> </b-input-group
+    >
+    <br /><br />
     <div class="text-left">
       <b-button @click="add_product()" variant="outline-primary"
         ><b>Add <b-icon-plus-circle-fill /></b></b-button
@@ -21,6 +35,8 @@
       ></b-pagination>
     </div>
     <br /><br />
+    <b-form-file accept=".jpg, .png, .gif, .csv" v-model="file" plain></b-form-file
+    ><br /><br />
     <b-table
       class="css-serial"
       striped
@@ -30,6 +46,7 @@
       :fields="Columns"
       :per-page="perPage"
       :current-page="currentPage"
+      :filter="filter"
     >
       <template #cell(operation)="data">
         <b-button @click="Edit(data.item)" variant="success"
@@ -81,13 +98,14 @@ export default {
   props: ["Columns", "formFields"],
   data() {
     return {
-      perPage: 2,
+      perPage: 3,
       currentPage: 1,
       editedItem: this.formFields,
       modalShow: false,
       editedIndex: -1,
       tableData: [],
       delete_data: null,
+      filter: null,
     };
   },
 

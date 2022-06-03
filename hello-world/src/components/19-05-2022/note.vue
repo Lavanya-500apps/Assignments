@@ -55,7 +55,7 @@
           <textarea v-model="message" type="text" id="text" required></textarea
           ><br />
           <b-form-file
-            accept=".jpg, .png, .gif"
+            accept=".jpg, .png, .gif, .csv"
             v-model="file"
             plain
           ></b-form-file><br><br>
