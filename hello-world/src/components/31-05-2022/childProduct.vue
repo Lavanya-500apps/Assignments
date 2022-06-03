@@ -1,21 +1,44 @@
 <template>
   <div>
-    <b-icon icon="person" id="person" scale="1.5"></b-icon>
-    <b-icon icon="envelope" id="envelope" scale="1.5"></b-icon>
-    <b-icon icon="cursor" id="cursor" variant="dark" scale="1.5"></b-icon>
-    <b-input-group>
+    <b-form id="form">
       <b-row
-        ><b-col cols="12">
-          <b-form-input id="filter-input" v-model="filter">
-          </b-form-input> </b-col
-      ></b-row>
-
-      <b-input-group-append>
-        <b-button :disabled="!filter" variant="danger" @click="filter = ''"
-          >clear</b-button
-        >
-      </b-input-group-append> </b-input-group
-    >
+        ><b-col cols="2">
+          <b-form-input
+            type="text"
+            id="product"
+            placeholder="Enter product"
+            v-model="filter"
+          >
+          </b-form-input></b-col
+        ><b-col cols="2">
+          <b-form-input
+            type="text"
+            id="sku"
+            placeholder="Enter sku"
+            v-model="filter1"
+          ></b-form-input></b-col
+        ><b-col cols="2">
+          <b-form-input
+            type="text"
+            id="type"
+            placeholder="Enter type"
+            v-model="filter2"
+          ></b-form-input></b-col
+        ><b-col cols="2">
+          <b-icon icon="person" id="person" scale="1.5"></b-icon>
+          <b-icon icon="envelope" id="envelope" scale="1.5"></b-icon>
+          <b-icon icon="cursor" id="cursor" variant="dark" scale="1.5"></b-icon>
+          <b-button
+            type="submit"
+            id="search"
+            variant="primary"
+            :disabled="!filter"
+            @click="filter = ''"
+            >Search</b-button
+          >
+        </b-col></b-row
+      >
+    </b-form>
     <br /><br />
     <div class="text-left">
       <b-button @click="add_product()" variant="outline-primary"
@@ -35,15 +58,19 @@
       ></b-pagination>
     </div>
     <br /><br />
-    <b-form-file accept=".jpg, .png, .gif, .csv" v-model="file" plain></b-form-file
-    ><br /><br />
+    <p id="file"></p>
+    <div class="text-left">
+      <input type="file" ref="doc" @change="read_file()" />
+      <div>{{ content }}</div>
+    </div>
+    <br /><br />
     <b-table
       class="css-serial"
       striped
       hover
       bordered
       :items="tableData"
-      :fields="Columns"
+      :fields="columns"
       :per-page="perPage"
       :current-page="currentPage"
       :filter="filter"
@@ -53,7 +80,7 @@
           >Edit <b-icon-pencil-fill /></b-button
         >&nbsp;
         <b-button v-b-modal.modal-1 @click="remove(data.item)" variant="danger"
-          >Delete <b-icon-x-square
+          >Delete <b-icon-trash
         /></b-button>
       </template>
     </b-table>
@@ -81,7 +108,7 @@
     <b-modal
       id="modal-1"
       ref="deleteConfirmation"
-      title="Delete Details"
+      title="Delete Item"
       header-bg-variant="primary"
       @ok="Delete"
     >
@@ -95,7 +122,8 @@
 <script>
 export default {
   name: "Product_Details",
-  props: ["Columns", "formFields"],
+  props: ["columns", "formFields"],
+  components: {},
   data() {
     return {
       perPage: 3,
@@ -106,12 +134,13 @@ export default {
       tableData: [],
       delete_data: null,
       filter: null,
+      file: null,
     };
   },
 
   computed: {
     Title() {
-      return this.editedIndex === -1 ? "Add Productt" : "Edit Details";
+      return this.editedIndex === -1 ? "Add Product" : "Edit Details";
     },
     rows() {
       return this.tableData.length;
@@ -133,7 +162,6 @@ export default {
     Delete() {
       console.log("this.item", this.delete_data);
       const index = this.tableData.indexOf(this.delete_data);
-      //confirm("Are you sure you want to delete this item?") &&
       this.tableData.splice(index, 1);
     },
     close() {
@@ -155,10 +183,32 @@ export default {
       this.delete_data = data;
       this.$refs.deleteConfirmation.show();
     },
+    read_file() {
+      this.file = this.$refs.doc.files[0];
+      const reader = new FileReader();
+      if (this.file.name.includes(".txt")) {
+        reader.onload = (res) => {
+          this.content = res.target.result;
+        };
+        reader.onerror = (err) => console.log(err);
+        reader.readAsText(this.file);
+      } else {
+        reader.onload = (res) => {
+          console.log(res.target.result);
+          document.getElementById("file").innerHTML = res.target.result;
+        };
+        reader.onerror = (err) => console.log(err);
+        reader.readAsText(this.file);
+      }
+    },
   },
 };
 </script>
 <style>
+#search {
+  position: relative;
+  left: -140px;
+}
 #submit_data {
   position: relative;
   bottom: 480px;
@@ -168,18 +218,18 @@ export default {
 }
 #person {
   position: relative;
-  top: -100px;
-  left: -652px;
+  top: -5px;
+  left: -780px;
 }
 #envelope {
   position: relative;
-  top: -100px;
-  left: -360px;
+  top: -5px;
+  left: -480px;
 }
 #cursor {
   position: relative;
-  top: -100px;
-  left: -50px;
+  top: -5px;
+  left: -180px;
 }
 .css-serial {
   counter-reset: Product_details; /* Set the serial number counter to 0 */

@@ -65,8 +65,10 @@ import nextp from "@/components/26-05-2022/nextp.vue";
 import mixin from "@/components/26-05-2022/mixin.vue";
 import assign from "@/components/27-05-2022/assign.vue";
 import sidebar from "@/components/31-05-2022/sidebar.vue";
-import pproduct from "@/components/31-05-2022/pproduct.vue";
-
+import parentProduct from "@/components/31-05-2022/parentProduct.vue";
+import filereader from "@/components/31-05-2022/filereader.vue";
+import imagereader from "@/components/31-05-2022/imagereader.vue";
+import home from "@/components/31-05-2022/home.vue"
 
 Vue.use(Router);
 
@@ -134,8 +136,10 @@ const routes = [
   { path: "/mixin", name: "mixin", component:mixin},
   { path: "/assign", name: "assign", component:assign},
   { path: "/sidebar", name: "sidebar", component:sidebar},
-  { path: "/pproduct", name: "pproduct", component:pproduct},
-  
+  { path: "/parentProduct", name: "parentProduct", component:parentProduct},
+  { path: "/filereader", name: "filereader", component:filereader},
+  { path: "/imagereader", name: "imagereader", component:imagereader},
+  { path: "/home", name:"home", component:home}
    
  
 ];

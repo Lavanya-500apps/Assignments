@@ -1,49 +1,10 @@
 <template>
   <div>
-    <b-navbar id="color">
-      <b-navbar-brand
-        ><h2 style="color: white"><b-icon-list /></h2
-      ></b-navbar-brand>
-      <h2 id="card" style="color: white; font-size: 20px">
-        <b>Root<b-icon-chevron-down /></b>
-      </h2> </b-navbar
-    ><br />
-    <b-form>
-      <b-row
-        ><b-col cols="2"
-          ><b-form-input
-            type="text"
-            maxlength="10"
-            placeholder="Enter product"
-            required
-          ></b-form-input
-        ></b-col>
-        <b-col cols="2"
-          ><b-form-input
-            type="text"
-            maxlength="10"
-            placeholder="Enter sku"
-            required
-          ></b-form-input
-        ></b-col>
-        <b-col cols="2"
-          ><b-form-input
-            type="text"
-            maxlength="10"
-            placeholder="Enter type"
-            required
-          ></b-form-input
-        ></b-col>
-        <b-button type="search" @click="search()" variant="outline-primary"
-          >search</b-button
-        ></b-row
-      >
-    </b-form>
-   <br />
+    <sidebar></sidebar>
     <center>
       <br /><br />
-      <cproduct
-        :Columns="['Id', 'Product', 'Sku', 'Type', 'Quality', 'Operation']"
+      <childProduct
+        :columns="['Id', 'Product', 'Sku', 'Type', 'Quality', 'Operation']"
         :formFields="{}"
       >
         <!--  form input fields in this slot-->
@@ -96,16 +57,18 @@
           </b-form-input>
           <br /><br />
         </template>
-      </cproduct>
+      </childProduct>
     </center>
   </div>
 </template>
 
 <script>
-import cproduct from "./cproduct.vue";
+import childProduct from "./childProduct.vue";
+import Sidebar from "./sidebar.vue";
+
 export default {
   name: "Add_Product",
-  components: { cproduct },
+  components: { childProduct, Sidebar },
 };
 </script>
 <style scoped>

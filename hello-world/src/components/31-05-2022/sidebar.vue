@@ -8,12 +8,7 @@
       <h2 id="card" style="color: white; font-size: 20px">
         <b>Root<b-icon-chevron-down /></b>
       </h2> </b-navbar
-    ><br /><br /><br />
-
-    <center>
-      <u> <h1 style="background-color:lightblue" id="Home"></h1> </u>
-    </center>
-
+    ><br />
     <b-sidebar id="my-sidebar" title="Logistic" shadow>
       <br /><br />
       <div>
@@ -41,11 +36,10 @@ export default {
   },
   methods: {
     product() {
-      this.$router.push("/pproduct");
+      this.$router.push("/parentProduct");
     },
     home() {
-      document.getElementById("Home").innerHTML =
-        "Welcome to the logistic products";
+      this.$router.push("/home");
     },
   },
 };
@@ -53,6 +47,6 @@ export default {
 
 <style>
 #color {
- background-color: rgb(129, 28, 218);
+  background-color: rgb(129, 28, 218);
 }
 </style>
