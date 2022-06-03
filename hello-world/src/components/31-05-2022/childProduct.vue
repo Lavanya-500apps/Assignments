@@ -60,8 +60,7 @@
     <br /><br />
     <p id="file"></p>
     <div class="text-left">
-      <input type="file" ref="doc" @change="read_file()" />
-      <div>{{ content }}</div>
+      <input type="file" ref="doc" @change="read_file()" />       
     </div>
     <br /><br />
     <b-table
@@ -135,6 +134,8 @@ export default {
       delete_data: null,
       filter: null,
       file: null,
+      
+      
     };
   },
 
@@ -188,7 +189,8 @@ export default {
       const reader = new FileReader();
       if (this.file.name.includes(".txt")) {
         reader.onload = (res) => {
-          this.content = res.target.result;
+          console.log(res.target.result);
+           document.getElementById("file").innerHTML = res.target.result;
         };
         reader.onerror = (err) => console.log(err);
         reader.readAsText(this.file);
@@ -196,6 +198,7 @@ export default {
         reader.onload = (res) => {
           console.log(res.target.result);
           document.getElementById("file").innerHTML = res.target.result;
+         
         };
         reader.onerror = (err) => console.log(err);
         reader.readAsText(this.file);

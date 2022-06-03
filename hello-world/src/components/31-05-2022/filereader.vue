@@ -2,9 +2,7 @@
   <div>
     <h2>filereader</h2>
     <p id="file"></p>
-    <input type="file" ref="doc" @change="readFile()" />
-      <div>{{content}}</div>
-    
+    <input type="file" ref="doc" @change="readFile()" />    
   </div>
 </template>
 
@@ -23,7 +21,8 @@ export default {
       const reader = new FileReader();
       if (this.file.name.includes(".txt")) {
         reader.onload = (res) => {
-          this.content = res.target.result;
+          console.log(res.target.result);
+          document.getElementById("file").innerHTML=res.target.result;
         };
         reader.onerror = (err) => console.log(err);
         reader.readAsText(this.file);
