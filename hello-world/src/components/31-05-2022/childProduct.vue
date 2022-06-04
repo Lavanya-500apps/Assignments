@@ -44,7 +44,7 @@
       <b-button @click="add_product()" variant="outline-primary"
         ><b>Add <b-icon-plus-circle-fill /></b></b-button
       >&nbsp;
-      <b-button @click="export_product()" variant="outline-primary"
+      <b-button @click="Export()" variant="outline-primary"
         ><b>Export<b-icon-arrow-up-short /></b></b-button
       >&nbsp;
       <b-button @click="read_file()" variant="outline-primary"
@@ -119,6 +119,8 @@
 </template>
 
 <script>
+import exportFromJSON from 'export-from-json'
+
 export default {
   name: "Product_Details",
   props: ["columns", "formFields"],
@@ -220,6 +222,28 @@ export default {
         reader.onerror = (err) => console.log(err);
         reader.readAsText(this.file);
       }
+    },
+    Export() {
+      const objectToCsv = function (data) {
+        const csvRows = [];
+        const headers = Object.keys(data[0]);
+        csvRows.push(headers.join(","));
+        for (const row of data) {
+          const values = headers.map((header) => {
+            const val = row[header];
+            return `"${val}"`;
+          });
+          csvRows.push(values.join(","));
+        }
+        return csvRows.join("\n");
+      };
+      const data = this.tableData;
+      const csvData = objectToCsv(data);
+      console.log(csvData);
+      //const data = this.tableData;
+      const fileName = "TableData";
+      const exportType = exportFromJSON.types.csv;
+      exportFromJSON({ data, fileName, exportType });
     },
   },
 };
