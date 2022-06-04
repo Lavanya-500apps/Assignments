@@ -47,7 +47,7 @@
       <b-button @click="export_product()" variant="outline-primary"
         ><b>Export<b-icon-arrow-up-short /></b></b-button
       >&nbsp;
-      <b-button @click="import_product()" variant="outline-primary"
+      <b-button @click="read_file()" variant="outline-primary"
         ><b
           >Import<u><b-icon-arrow-down-short /></u></b></b-button
       >&nbsp;<br /><br />
@@ -60,7 +60,7 @@
     <br /><br />
     <p id="file"></p>
     <div class="text-left">
-      <input type="file" ref="doc" @change="read_file()" />       
+      <input type="file" ref="doc"  />   
     </div>
     <br /><br />
     <b-table
@@ -125,7 +125,7 @@ export default {
   components: {},
   data() {
     return {
-      perPage: 3,
+      perPage: 5,
       currentPage: 1,
       editedItem: this.formFields,
       modalShow: false,
@@ -198,6 +198,23 @@ export default {
         reader.onload = (res) => {
           console.log(res.target.result);
           document.getElementById("file").innerHTML = res.target.result;
+          const convert = csv => {
+          const myArray = csv.split("\n");
+                   const keys = myArray[0].split(',')
+                   //const index = myArray.length-1
+                   return myArray.splice(1).map(myArray => {
+                     return myArray.split(',').reduce((acc, cur, i) => {
+                       const toAdd = {};
+                       toAdd[keys[i]] = cur;
+                       return { ...acc, ...toAdd};
+                     },{})
+                   })
+          }
+          const coverted = res.target.result
+          console.log(convert(coverted))
+          this.tableData=convert(coverted);
+          console.log( this.tableData)
+          return this.tableData;
          
         };
         reader.onerror = (err) => console.log(err);
