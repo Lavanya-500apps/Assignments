@@ -69,7 +69,7 @@ import parentProduct from "@/components/31-05-2022/parentProduct.vue";
 import filereader from "@/components/31-05-2022/filereader.vue";
 import imagereader from "@/components/31-05-2022/imagereader.vue";
 import home from "@/components/31-05-2022/home.vue";
-//import data from "@/components/31-05-2022/data.vue";
+import pcard from "@/components/06-06-2022/pcard.vue";
 
 Vue.use(Router);
 
@@ -141,7 +141,7 @@ const routes = [
   { path: "/filereader", name: "filereader", component:filereader},
   { path: "/imagereader", name: "imagereader", component:imagereader},
   { path: "/home", name:"home", component:home},
-  //{ path: "/data", name:"data", component:data},
+  { path: "/pcard", name:"pcard", component:pcard},
    
  
 ];
