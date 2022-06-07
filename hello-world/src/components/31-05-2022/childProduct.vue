@@ -72,7 +72,7 @@
       :fields="columns"
       :per-page="perPage"
       :current-page="currentPage"
-      :filter="filter"
+      :filter="filter || filter1 || filter2"
     >
       <template #cell(operation)="data">
         <b-button @click="Edit(data.item)" variant="success"
@@ -135,6 +135,8 @@ export default {
       tableData: [],
       delete_data: null,
       filter: null,
+      filter1: null,
+      filter2: null,
       file: null,
       
       
