@@ -70,6 +70,7 @@ import filereader from "@/components/31-05-2022/filereader.vue";
 import imagereader from "@/components/31-05-2022/imagereader.vue";
 import home from "@/components/31-05-2022/home.vue";
 import pcard from "@/components/06-06-2022/pcard.vue";
+import multiple from "@/components/06-06-2022/multiple.vue";
 
 Vue.use(Router);
 
@@ -142,6 +143,7 @@ const routes = [
   { path: "/imagereader", name: "imagereader", component:imagereader},
   { path: "/home", name:"home", component:home},
   { path: "/pcard", name:"pcard", component:pcard},
+  { path: "/multiple", name:"multiple", component:multiple},
    
  
 ];

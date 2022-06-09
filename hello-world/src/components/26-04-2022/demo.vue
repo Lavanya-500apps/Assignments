@@ -23,6 +23,7 @@ export default {
           this.value=this.array.forEach((arr)=>{
             
           console.log(arr*2)})
+          
 
       },
 
