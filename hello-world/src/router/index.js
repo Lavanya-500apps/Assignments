@@ -71,6 +71,7 @@ import imagereader from "@/components/31-05-2022/imagereader.vue";
 import home from "@/components/31-05-2022/home.vue";
 import pcard from "@/components/06-06-2022/pcard.vue";
 import multiple from "@/components/06-06-2022/multiple.vue";
+import forms from "@/components/trails/forms.vue";
 
 Vue.use(Router);
 
@@ -144,6 +145,7 @@ const routes = [
   { path: "/home", name:"home", component:home},
   { path: "/pcard", name:"pcard", component:pcard},
   { path: "/multiple", name:"multiple", component:multiple},
+  { path: "/forms", name:"forms", component:forms},
    
  
 ];
